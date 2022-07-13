@@ -1,0 +1,55 @@
+<!--pages/home/createHeadPortrait/createHeadPortrait.wxml-->
+<swiper current="1" bindchange="bindchange" style="width: 750rpx;height: 100vh;">
+    <swiper-item item-id="0"></swiper-item>
+    <swiper-item item-id="1">
+        <!-- MenuMenu -->
+        <view style="height: {{MenuBottom}}px;margin-bottom: 20rpx;"></view>
+        <!-- TitleTitle -->
+        <view class="title" style="height: {{MenuHeight}}px; line-height: {{MenuHeight}}px; width: {{MenuLeft}}px; top: {{MenuTop}}px;">头像框头像生成器</view>
+        <mp-loading wx:if="{{mploading}}" style="position: absolute;top: {{MenuBottom+MenuHeigh+MenuTop}}px;margin-top: 230rpx; width: 300rpx;margin-left: 225rpx;"></mp-loading>
+        <!-- CanvasCanvas -->
+        <canvas type="2d" id="canvas" class="canvas" catchtap="previewImage"></canvas>
+        <view class="button_HeadPortrait">
+            <view class="button_ChooseHeadPortrait" catchtap="gotoheadportrait" data-link="/pages/HeadPortrait/HeadPortrait">
+                <mp-icon style="position: relative;top: -5rpx;" icon="shop" color="#ff4800" size="{{windowWidth/750*55}}"></mp-icon>
+                <text style="position: relative;left: -5rpx;">选择头像</text>
+            </view>
+            <view class="button_UploadHeadPortrait" catchtap="UploadHeadPortrait">
+                <mp-icon style="position: relative;top: -5rpx;" icon="add" color="#fff" size="{{windowWidth/750*55}}"></mp-icon>
+                <text style="position: relative;left: -5rpx;">上传头像</text>
+            </view>
+            <view class="button_ModifyTheHeadPortrait" catchtap="ModifyTheHeadPortrait">
+                <mp-icon style="position: relative;top: -5rpx;" icon="clip" color="rgba(28,177,92,1)" size="{{windowWidth/750*55}}"></mp-icon>
+                <text style="position: relative;left: -5rpx;">剪切头像</text>
+            </view>
+        </view>
+        <!-- icon -->
+        <view class="icon1" bindtap="HPF_icon">
+            <image src="{{icon1}}"></image>
+        </view>
+        <view class="icon2" bindtap="bigIcon">
+            <image src="{{icon2}}"></image>
+        </view>
+        <view class="icon3" bindtap="smallIcon">
+            <image src="{{icon3}}"></image>
+        </view>
+        <view class="button_ChooseHeadPortraitFrame" catchtap="gotoheadportraitframe">
+            <mp-icon style="position: relative;top: -5rpx;" icon="photo-wall" color="#ff0040" size="{{windowWidth/750*55}}"></mp-icon>
+            <text>选择头像框</text>
+        </view>
+        <view class="save">
+            <view catchtap="saveMax">下载(1080px)</view>
+            <view catchtap="saveNormal">下载({{canvasWidth}}px)</view>
+            <view catchtap="saveMin">下载(50px)</view>
+        </view>
+        <view class="choosePX">
+            <view class="sliderbox">
+                <slider bindchange="sliderChange" min="50" max="{{canvasWidth}}" class="slider" show-value></slider>
+            </view>
+            <view class="downloadIcon">
+                <mp-icon catchtap="saveSlider" icon="download" color="rgba(28,177,92,1)" size="{{windowWidth/750*80}}"></mp-icon>
+            </view>
+        </view>
+        <view class="myfirst"></view>
+    </swiper-item>
+</swiper>

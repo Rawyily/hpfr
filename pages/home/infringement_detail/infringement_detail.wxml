@@ -1,0 +1,47 @@
+<!--pages/home/infringement_detail/infringement_detail.wxml-->
+<view style="width:750vw;height: 100vh;display: flex;flex-direction: column;">
+    <view style="height: {{MenuTop}}px;width: 750rpx;" catchtap="ScrollTop"></view>
+    <view style="width: {{MenuLeft}}px;height: {{MenuHeight}}px;line-height: {{MenuHeight}}px;text-align: center;font-weight: bold;">
+        <view wx:if="{{data.reviewTheResults == 0}}" catchtap="del" class="del" style="height: {{MenuHeight}}px;line-height: {{MenuHeight}}px;">撤销</view>侵权反馈详情
+    </view>
+    <view style="flex: 1;">
+        <swiper style="width:730rpx;height:100%;padding-left: 10rpx;padding-right: 10rpx;" current="1" bindchange="swiperChange">
+            <swiper-item style="width:inherit;height: inherit;" item-id="0"></swiper-item>
+            <swiper-item style="width:inherit;height: inherit;" item-id="1">
+                <scroll-view style="width: 730rpx;height: 100%;" bindscrolltolower="" scroll-top="{{ScrollTop}}" enhanced="true" show-scrollbar="{{false}}" scroll-y="true">
+                    <!-- 1.反馈对象 _id -->
+                    <view>1.反馈内容对应的编号:</view>
+                    <view class="active_id" catchtap="goInfringement" data-classify="{{data.classify}}" data-_id="{{data.infringement_id}}" style="width: 750rpx;text-align: center;font-weight: bold;font-size: 32rpx;">{{data.infringement_id}}</view>
+                    <!-- 2.反馈对象图片 -->
+                    <view>2.反馈内容: <text style="font-weight: bold;font-size: 1rem;">{{classify}}</text></view>
+                    <view style="margin-left: 250rpx;margin-right: 250rpx;width: 250rpx;">
+                        <image catchtap="previewImage" data-url="{{data.id_imgurl[1]}}" style="width: 250rpx;height: 0;" mode="widthFix" src="{{data.id_imgurl[0]}}"></image>
+                    </view>
+                    <!-- 3.提交反馈的时间 -->
+                    <view>3.提交反馈的时间: <text style="font-weight: bold;">{{data._createTime}}</text></view>
+                    <!-- 4.审核时间 -->
+                    <view>4.审核时间: <text style="font-weight: bold;">{{data._updateTime}}</text></view>
+                    <!-- 5.审核结果 -->
+                    <view>5.审核结果: <text style="font-weight: bold;{{data.reviewTheResults == 1 ? 'color:green;':''}}{{data.reviewTheResults == 2 ? 'color:red;':''}}">{{reviewTheResults}}</text></view>
+                    <!-- 6.审核不通过原因 -->
+                    <view>6.审核不通过原因:</view>
+                    <view wx:if="{{data.reviewTheResultsSo.length>0}}" style="width: 700rpx;margin-left: 25rpx;margin-right: 25rpx;background-color: rgb(255, 255, 255);border-radius: 5rpx;font-size: 35rpx;"><text decode="true" space="emsp">&emsp;&emsp;</text>{{data.reviewTheResultsSo}}</view>
+                    <!-- 7.我提交的图片 -->
+                    <view>7.我提交的图片:</view>
+                    <view wx:for="{{data.img}}" wx:key="index">
+                        <image style="width: 600rpx;margin-left: 75rpx;margin-right: 75rpx;margin-top: 10rpx;margin-bottom: 10rpx;" mode="widthFix" src="{{item}}"></image>
+                    </view>
+                    <!-- 8.我提交的说明 -->
+                    <view>8.我提交的说明:</view>
+                    <view wx:if="{{data.text.length>0}}" class="Mytext"><text decode="true" space="emsp">&emsp;&emsp;</text>{{data.text}}</view>
+                    <!-- 编号 -->
+                   <view class="infringementID">反馈编号:{{data._id}}</view>
+                    <!-- 弹窗 -->
+                    <mp-dialog title="询问" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+                        <view>是否撤销这个反馈？</view>
+                    </mp-dialog>
+                </scroll-view>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>

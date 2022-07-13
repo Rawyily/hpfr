@@ -1,0 +1,25 @@
+<view class="starusBar" bindtap="scrollTop" style="height: {{SystemInfo.statusBarHeight}}px;"></view>
+<view  bindtap="scrollTop" style="width: 750rpx;height: {{Menu.bottom}}px;position: relative;">
+    <view class="title" style="width: {{Menu.left-(SystemInfo.windowWidth - Menu.right)*2}}px;height: {{Menu.height+2}}px;line-height: {{Menu.height+2}}px; left: {{SystemInfo.windowWidth - Menu.right}}px;">
+        我收藏的{{tap==3 ? '表情包':'头像'}}
+    </view>
+</view>
+<view class="tab">
+    <view class="item-tab" id="{{tap==1 ? 'active':''}}" bindtap="changeItemID" data-itemID="1">头像</view>
+    <view class="item-tab" id="{{tap==2 ? 'active':''}}" bindtap="changeItemID" data-itemID="2">集合</view>
+    <view class="item-tab" id="{{tap==3 ? 'active':''}}" bindtap="changeItemID" data-itemID="3">表情包</view>
+</view>
+<view class="content" style="height:{{SystemInfo.windowHeight - Menu.bottom - SystemInfo.windowWidth / 750 * 70}}px;">
+    <swiper current="{{item_id}}" bindchange="changeTap">
+        <swiper-item item-id="0"></swiper-item>
+        <swiper-item item-id="1">
+            <include src="1_all.wxml"></include>
+        </swiper-item>
+        <swiper-item item-id="2">
+            <include src="2_gather.wxml"></include>
+        </swiper-item>
+        <swiper-item item-id="3">
+            <include src="3_meme.wxml"></include>
+        </swiper-item>
+    </swiper>
+</view>

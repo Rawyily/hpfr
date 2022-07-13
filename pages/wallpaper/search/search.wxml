@@ -1,0 +1,76 @@
+<!--pages/headPortrait/search/search.wxml-->
+<swiper class="swiper" current="{{item_id}}" bindchange="swiperchange">
+    <swiper-item class="swiper" item-id="0"></swiper-item>
+    <swiper-item class="swiper" item-id="1">
+    <!-- 标题 -->
+    <view class="title" style="height: {{MenuBottom}}px;" catchtap="across_scrollTop">
+            <view class="titletext" style="width: {{MenuLeft}}px; height: {{MenuHeight+2}}px;line-height: {{MenuHeight}}px;">
+            <text wx:if="{{!keywords}}">搜索-横屏-{{placeholder}}</text>
+            <text wx:if="{{keywords}}">关键词-横屏-{{placeholder}}</text>
+            </view>
+        </view>
+        <!--  -->
+        <block wx:if="{{across.length > 0 }}">
+        <!-- 滑动区域 -->
+            <scroll-view style="height: {{windowHeight - MenuBottom}}px;" scroll-top="{{scrollTop}}" enhanced="true" show-scrollbar="{{false}}" scroll-y="true" bindscrolltolower="getAcross" class="scrollview">
+                <!-- 搜索 -->
+                <van-search wx:if="{{!keywords}}" bind:search="bindsearch" value="{{ value }}" shape="round" background="none" placeholder="{{placeholder}}" />
+                <view class="scrollview_view" wx:for="{{across}}" wx:key="index">
+                    <!-- 广告 -->
+                    <view class="advertising" wx:if="{{across_advertising_img[index].imgurl}}">
+                        <image catchtap="previewImage" data-url="{{across_advertising_img[index].imgurl}}" mode="scaleToFill" src="{{across_advertising_img[index].imgurl}}"></image>
+                    </view>
+                    <!-- 壁纸 -->
+                    <view wx:for="{{item.array}}" wx:key="index" class="across_imgbox">
+                        <image mode="widthFix" src="{{item.thumbnail}}"  catchtap="details" data-data="{{item}}"></image>
+                    </view>
+                </view>
+                <!-- mp-loading加载提示 -->
+                <view style="width: 730rpx; height: 100rpx;float: left;" wx:if="{{across_loading}}">
+                    <mp-loading style="position: relative;top: 40rpx;"></mp-loading>
+                </view>
+                <!-- 全部加载完成提示 -->
+                <view class="loaded" wx:if="{{across_end}}">-{{across_end_text}}-</view>
+            </scroll-view>
+        </block>
+        <block wx:else>
+            <mp-loading class="mp-loading" />
+        </block>
+    </swiper-item>
+    <swiper-item class="swiper" item-id="2">
+            <!-- 标题 -->
+            <view class="title" style="height: {{MenuBottom}}px;" catchtap="vertical_scrollTop">
+            <view class="titletext" style="width: {{MenuLeft}}px; height: {{MenuHeight+2}}px;line-height: {{MenuHeight}}px;">
+            <text wx:if="{{!keywords}}">搜索-竖屏-{{placeholder}}</text>
+            <text wx:if="{{keywords}}">关键词-竖屏-{{placeholder}}</text>
+            </view>
+        </view>
+        <!--  -->
+        <block wx:if="{{vertical.length > 0 }}">
+        <!-- 滑动区域 -->
+            <scroll-view style="height: {{windowHeight - MenuBottom}}px;" scroll-top="{{scrollTop}}" enhanced="true" show-scrollbar="{{false}}" scroll-y="true" bindscrolltolower="getvertical" class="scrollview">
+                <!-- 搜索 -->
+                <van-search wx:if="{{!keywords}}" bind:search="bindsearch" value="{{ value }}" shape="round" background="none" placeholder="{{placeholder}}" />
+                <view class="scrollview_view" wx:for="{{vertical}}" wx:key="index">
+                    <!-- 广告 -->
+                    <view class="advertising" wx:if="{{vertical_advertising_img[index].imgurl}}">
+                        <image catchtap="previewImage" data-url="{{vertical_advertising_img[index].imgurl}}" mode="scaleToFill" src="{{vertical_advertising_img[index].imgurl}}"></image>
+                    </view>
+                    <!-- 壁纸 -->
+                    <view wx:for="{{item.array}}" wx:key="index" class="vertical_imgbox">
+                        <image mode="widthFix" src="{{item.thumbnail}}"  catchtap="details" data-data="{{item}}"></image>
+                    </view>
+                </view>
+                <!-- mp-loading加载提示 -->
+                <view style="width: 730rpx; height: 100rpx;float: left;" wx:if="{{vertical_loading}}">
+                    <mp-loading style="position: relative;top: 40rpx;"></mp-loading>
+                </view>
+                <!-- 全部加载完成提示 -->
+                <view class="loaded" wx:if="{{vertical_end}}">-{{vertical_end_text}}-</view>
+            </scroll-view>
+        </block>
+        <block wx:else>
+            <mp-loading class="mp-loading" />
+        </block>
+    </swiper-item>
+</swiper>

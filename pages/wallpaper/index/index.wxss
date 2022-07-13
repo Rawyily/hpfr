@@ -1,0 +1,129 @@
+/* pages/wallpaper/index/index.wxss */
+.van-search {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.van_search_custom_class {
+    width: 100%;
+    height: 100%;
+    border-radius: 50rpx;
+}
+
+.van_search_input_class {
+    font-size: 30rpx;
+}
+
+/* 顶部导航栏 */
+.tab {
+    display: flex;
+    height: 70rpx;
+}
+
+.tab view {
+    flex: 1;
+    height: 50rpx;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+    line-height: 50rpx;
+    text-align: center;
+}
+
+#active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* include */
+.content {
+    width: 750rpx;
+    height: 100%;
+}
+
+.content swiper {
+    height: inherit;
+    /* background-color: rgb(255, 187, 187); */
+}
+/* include公用css */
+.mp-loading {
+    width: 250rpx;
+    position: absolute;
+    top: 50%;
+    left: 250rpx;
+}
+
+.scrollbox {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    margin-left: 15rpx;
+    margin-right: 15rpx;
+    display: flex;
+    height: 100%;
+}
+
+.scrollview {
+    position: relative;
+    height: 100%;
+}
+
+.loaded {
+    width: 750rpx;
+    height: 120rpx;
+    /* background-color: #fff; */
+    line-height: 120rpx;
+    text-align: center;
+    float: left;
+    color: #ffaaaa;
+}
+/***************** 内容区域 ***************/
+/* across.wxml */
+.across_imgbox {
+    float: left;
+    width: 340rpx;
+    /* height: 390rpx; */
+    margin: 10rpx;
+    /* background-color: #fff; */
+    /* border-radius: 3%; */
+    /* 无效 */
+    display: flex;
+    align-items: center;
+}
+
+.across_imgbox image {
+    width: 340rpx;
+    /* height: 390rpx; */
+    border-radius: 3%;
+}
+/* vertical.wxml */
+.vertical_imgbox {
+    float: left;
+    width: 220rpx;
+    /* height: 390rpx; */
+    margin: 10rpx;
+    /* background-color: #fff; */
+    /* border-radius: 3%; */
+    /* 无效 */
+    display: flex;
+    align-items: center;
+}
+
+.vertical_imgbox image {
+    width: 220rpx;
+    /* height: 390rpx; */
+    border-radius: 3%;
+}
+/* keywords.wxml */
+
+.keywords{
+    float: left;
+    padding-left: 15rpx;
+    padding-right: 15rpx;
+    border: 1rpx solid rgb(255, 76, 76);
+    color: rgb(158, 0, 66);
+    margin: 20rpx;
+}
+.keywords:active{
+    border: 1rpx solid rgb(0, 174, 255);
+    color: rgb(255, 0, 106);
+}

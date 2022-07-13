@@ -1,0 +1,59 @@
+<swiper current="1" class="swiper" bindchange="callback">
+    <swiper-item item-id="0" class="callback">
+    </swiper-item>
+    <swiper-item item-id="1">
+        <view>
+            <view style="height: {{MenuHeight+MenuTop}}px;line-height:{{MenuHeight+MenuTop+MenuTop}}px;" class="top">左滑返回</view>
+            <view wx:if="{{warning_squarefalse}}" class="warning">
+                <mp-icon style="position: relative;top: -5rpx;" icon="report-problem" color="rgb(255, 68, 0)" size="{{windowWidth/750*30}}"></mp-icon>
+                {{warning_squarefalse}}
+            </view>
+            <view wx:if="{{warning_giftrue}}" class="warning">
+                <mp-icon style="position: relative;top: -5rpx;" icon="report-problem" color="rgb(255, 68, 0)" size="{{windowWidth/750*30}}"></mp-icon>
+                {{warning_giftrue}}
+            </view>
+            <view class="imgUrl">
+                <image src="{{original}}" wx:if="{{original}}" catchtap="previewImage"></image>
+                <block wx:else>
+                    <mp-loading style="position: relative;top: 250rpx;"></mp-loading>
+                </block>
+            </view>
+            <view class="name" wx:if="{{nameshow}}">{{name}}</view>
+            <view class="statistical">
+                <view class="iconbox">
+                    <mp-icon class="icon" icon="eyes-on" color="blue" size="{{windowWidth/750*50}}"></mp-icon><text>{{browse}}</text>
+                </view>
+                <view class="iconbox">
+                    <mp-icon class="icon" type="field" icon="star" color="#ff3c00" size="{{windowWidth/750*50}}"></mp-icon><text>{{collection}}</text>
+                </view>
+                <view class="iconbox">
+                    <mp-icon class="icon" icon="play" color="red" size="{{windowWidth/750*50}}"></mp-icon><text>{{use}}</text>
+                </view>
+            </view>
+            <view class="buttonbox">
+                <view class="buttonborde">
+                    <view class="button" catchtap="collection">
+                        <mp-icon class="icon" type="{{collectionIconType}}" icon="star" color="#ff3c00" size="{{windowWidth/750*50}}"></mp-icon>收藏
+                    </view>
+                </view>
+                <view class="buttonborde">
+                    <view class="button" catchtap="addCanvas">
+                        <mp-icon style="position: relative;top: -3rpx;" icon="play" color="red" size="{{windowWidth/750*50}}"></mp-icon>生成器
+                    </view>
+                </view>
+            </view>
+            <view class="createTime">{{createTime}}</view>
+            <view class="copyright">版权:用户上传,侵权请联系删除</view>
+            <view class="_id"><text user-select="true">{{_id}}</text></view>
+            <!-- 收藏成功 -->
+            <view wx:if="{{collectionOk}}" class="collectionOk">
+                <mp-icon style="margin-left: 10rpx;" type="field" icon="done2" color="block" size="{{windowWidth/750*35}}"></mp-icon>
+                <text>收藏成功</text>
+                <text catchtap="gomycollection" style="color: crimson;position: absolute;right: 38rpx;">去看看</text>
+                <mp-icon catchtap="gomycollection" style="position: absolute;top: -3rpx; right: 10rpx;width: 30rpx;" type="field" icon="arrow" color="crimson" size="{{windowWidth/750*28}}"></mp-icon>
+            </view>
+            <!-- 使用 -->
+            <view class="use" catchtap="uABC">U</view>
+        </view>
+    </swiper-item>
+</swiper>

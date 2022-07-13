@@ -1,0 +1,30 @@
+<!--pages/headPortraitFrame/search/search.wxml-->
+
+<swiper current="{{item_id}}" bindchange="swiperchange" style="width: 750rpx;height: 100vh;">
+    <swiper-item item-id="0"></swiper-item>
+    <swiper-item item-id="1">
+        <view catchtap="scrollTop" style="width: 750rpx;height: {{MenuBottom}}px;"></view>
+        <view style="width: 750rpx;height: 60px;">
+            <van-search bind:search="bindsearch" background="none" value="{{ value }}" placeholder="{{search}}" />
+        </view>
+        <scroll-view scroll-top="{{scrollTop}}" enhanced="true" show-scrollbar="{{false}}" scroll-y="true" bindscrolltolower="bindscrolltolower" style="height: {{scrollHeight}}px;" class="scrollview">
+            <view wx:for="{{searcharray}}" wx:key="index">
+                <!-- 广告 -->
+                <view style="height: 200rpx;width: 750rpx;float: left;overflow: hidden;" wx:if="{{advertising_img[index].imgurl}}">
+                    <image catchtap="previewImage" data-url="{{advertising_img[index].imgurl}}" style="height: 200rpx;width: 750rpx;position: relative;" mode="scaleToFill" src="{{advertising_img[index].imgurl}}"></image>
+                </view>
+                <!-- 头像框 -->
+                <view wx:for="{{item.array}}" wx:key="index" class="imgbox">
+                    <image class="img" src="{{item.thumbnail}}" catchtap="goDetails" data-data="{{item}}"></image>
+                </view>
+            </view>
+            <view wx:if="{{searcharray.length == 0}}" style="width: 750rpx;height: 80%;"></view>
+            <!-- mp-loading加载提示 -->
+            <view style="width: 750rpx; height: 100rpx;clear: left;" wx:if="{{loading}}">
+                <mp-loading></mp-loading>
+            </view>
+            <!-- 全部加载完成提示 -->
+            <view class="loaded" wx:if="{{End}}">-END-</view>
+        </scroll-view>
+    </swiper-item>
+</swiper>

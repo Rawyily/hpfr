@@ -1,0 +1,30 @@
+<!--pages/user/upbackground/upbackground.wxml-->
+<swiper style="width: 100vw;height: 100vh;" current="1" bindchange="swiperchange">
+    <swiper-item style="width: inherit;height: inherit;" item-id="0"></swiper-item>
+    <swiper-item style="width: inherit;height: inherit;" item-id="1">
+        <view class="imagesbox" style="margin-top: {{-Menu.bottom}}px;">
+            <image catchtap="upimg" mode="widthFix" src="{{now_background}}"></image>
+        </view>
+        <view class="button" style="bottom: {{Menu.bottom}}px;">
+            <van-button disabled="{{disabled}}" loading="{{saveloading}}" loading-type="spinner" loading-text="设置中..." bind:click="UpFile" custom-class="custom-class" plain hairline type="primary">保存修改</van-button>
+        </view>
+    </swiper-item>
+    <swiper-item style="width: inherit;height: inherit;" item-id="2">
+        <view class="MenuBottom" style="height:{{Menu.bottom}}px;">
+            <view catchtap="scrollTop" class="title" style="width: {{Menu.left}}px;height: {{Menu.height+2}}px;line-height: {{Menu.height+2}}px;">
+                <image catchtap="clear" class="icon_clear" src="{{icon_clear}}"></image>
+                你使用过的背景图（{{history.length+images1.length}}P）
+            </view>
+        </view>
+        <scroll-view bindscrolltolower="addImages2" scroll-top="{{scrollTop}}" enhanced="true" show-scrollbar="{{false}}" scroll-y="true" class="scrollview">
+            <view style="height:{{Menu.bottom}}px;"></view>
+            <view class="updateTime">上次修改时间为：{{_updateTime}}</view>
+            <image lazy-load="true" show-menu-by-longpress="true" class="images" wx:for="{{images1}}" wx:key="index" src="{{item}}" mode="widthFix"></image>
+            <image lazy-load="true" show-menu-by-longpress="true" class="images" wx:for="{{images2}}" wx:key="index" src="{{item}}" mode="widthFix"></image>
+            <view class="end" wx:if="{{end}}">-END-</view>
+            <mp-dialog title="询问" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+                <view>是否清空全部记录？</view>
+            </mp-dialog>
+        </scroll-view>
+    </swiper-item>
+</swiper>

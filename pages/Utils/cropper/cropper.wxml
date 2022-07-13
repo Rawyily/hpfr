@@ -1,0 +1,33 @@
+<text class="hint" style="width: {{MenuLeft}}px;height: {{MenuHeight}}px; top:{{MenuTop}}px;">点击裁剪框预览裁图片</text>
+<view class="callback" style="top:{{MenuTop+MenuHeight}}px;" catchtap="callback"><mp-icon catchtap="callback" type="field" icon="close2" color="red" size="{{windowWidth/750*90}}"></mp-icon></view>
+<view class="image_cropper">
+    <image-cropper id="image-cropper" bindload="cropperload" bindimageload="loadimage" bindtapcut="clickcut" limit_move="{{limit_move}}" disable_rotate="{{disable_rotate}}" width="{{width}}" height="{{height}}" imgSrc="{{src}}" angle="{{angle}}" disable_width="{{disable_width}}" max_width="{{max_width}}" max_height="{{max_height}}" disable_height="{{disable_height}}" disable_ratio="{{disable_ratio}}">
+    </image-cropper>
+</view>
+
+<view class="select">
+    <view  style="color: {{textcolor}};"><text decode="true">&nbsp;锁定裁剪框宽&nbsp;</text><switch style="opacity: 0.75;" type="checkbox" class="switch" checked='{{disable_width?true:false}}'  bindchange="switchChangeDisableWidth"/></view>
+    <view  style="color: {{textcolor}};"><text decode="true">&nbsp;锁定裁剪框高&nbsp;</text><switch style="opacity: 0.75;" type="checkbox" checked='{{disable_height?true:false}}' bindchange="switchChangeDisableHeight" /></view>
+    <view  style="color: {{textcolor}};"><text decode="true">&nbsp;锁定比例&nbsp;</text><switch style="opacity: 0.75;" type="checkbox" checked='{{disable_ratio?true:false}}' bindchange="switchChangeDisableRatio" /></view>
+    <view  style="color: {{textcolor}};"><text decode="true">&nbsp;锁定旋转&nbsp;</text><switch style="opacity: 0.75;" type="checkbox" checked='{{disable_rotate?true:false}}' bindchange="switchChangeDisableRotate" /></view>
+    <view  style="color: {{textcolor}};"><text decode="true">&nbsp;限制移动&nbsp;</text><switch style="opacity: 0.75;" type="checkbox" checked='{{limit_move?true:false}}' bindchange="switchChangeLimitMove" /></view>
+
+    <view class="select_button">
+        <view class="upload" catchtap='upload'>
+            <mp-icon type="field" icon="add2" color="black" size="{{windowWidth/750*100}}"></mp-icon>
+        </view>
+        <view class="save" bindtap='submit'>
+            <mp-icon type="field" icon="done2" color="green" size="{{windowWidth/750*100}}"></mp-icon>
+        </view>
+    </view>
+
+    <view class="button">
+        <view class="arrow1" catchtouchstart='bottom' catchtouchend='end' data-type="bottom"><mp-icon catchtouchstart='bottom' catchtouchend='end' data-type="bottom" type="field" icon="arrow" color="#fff" size="{{windowWidth/750*50}}"></mp-icon></view>
+        <view class="arrow2" catchtouchstart='left' catchtouchend='end' data-type="left"><mp-icon catchtouchstart='left' catchtouchend='end' data-type="left" type="field" icon="arrow" color="#fff" size="{{windowWidth/750*50}}"></mp-icon></view>
+        <view class="arrow3" catchtouchstart='top' catchtouchend='end' data-type="top"><mp-icon catchtouchstart='top' catchtouchend='end' data-type="top" type="field" icon="arrow" color="#fff" size="{{windowWidth/750*50}}"></mp-icon></view>
+        <view class="arrow4" catchtouchstart='right' catchtouchend='end' data-type="right"><mp-icon catchtouchstart='right' catchtouchend='end' data-type="right" type="field" icon="arrow" color="#fff" size="{{windowWidth/750*50}}"></mp-icon></view>
+        <view class="refresh" catchtouchstart='rotate' catchtouchend='end' data-type="rotate"><mp-icon catchtouchstart='rotate' catchtouchend='end' data-type="rotate" type="field" icon="refresh" color="#fff" size="{{windowWidth/750*80}}"></mp-icon></view>
+        <view class="big" catchtouchstart='enlarge' catchtouchend='end' data-type="enlarge">+</view>
+        <view class="small" catchtouchstart='narrow' catchtouchend='end' data-type="narrow">-</view>
+    </view>
+</view>

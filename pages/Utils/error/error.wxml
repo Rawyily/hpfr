@@ -1,0 +1,2 @@
+<!--pages/Utils/error/error.wxml-->
+<view bindtap="gohome">出错了</view>

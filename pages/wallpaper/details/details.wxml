@@ -1,0 +1,60 @@
+<!--pages/wallpaper/details/details.wxml-->
+<swiper current="1" class="swiper" bindchange="callback">
+    <swiper-item item-id="0">
+    </swiper-item>
+    <swiper-item item-id="1">
+        <view>
+            <image catchtap="previewImage" data-url="{{data.original}}" mode="widthFix" src="{{data.original}}"></image>
+            <!--  capture-catch:longpress="download" -->
+        </view>
+    </swiper-item>
+    <swiper-item item-id="2">
+        <view style="width: {{MenuLeft}}px;height: {{MenuBottom}}px;position: relative;">
+            <view class="name" style="width: {{MenuLeft}}px;height: {{MenuHeight+2}}px;line-height: {{MenuHeight+2}}px;">{{data.name}}</view>
+        </view>
+        <view class="right_icon">
+            <view class="eyes_on_icon">
+                <mp-icon class="mp_icon_eyes_on" icon="eyes-on" color="black" size="{{windowWidth/750*80}}"></mp-icon>
+                <view class="eyes_on_num">{{data.browse}}</view>
+            </view>
+            <view class="like_icon">
+                <mp-icon catchtap="like" type="{{mp_icon_like}}" class="mp_icon_like" icon="like" color="red" size="{{windowWidth/750*100}}"></mp-icon>
+                <view class="like_num">{{data.like}}</view>
+            </view>
+            <view class="star_icon">
+                <mp-icon catchtap="collection" type="{{mp_icon_star}}" class="mp_icon_star" icon="star" color="#ff6633" size="{{windowWidth/750*100}}"></mp-icon>
+                <view class="star_num">{{data.collection}}</view>
+            </view>
+            <view class="download_icon">
+                <mp-icon catchtap="download" data-url="{{data.original}}" class="mp_icon_download" icon="download" color="#006633" size="{{windowWidth/750*100}}"></mp-icon>
+                <view class="download_num">{{data.download}}</view>
+            </view>
+            <view wx:if="{{data.isAcross}}" class="upbackgroundimage_icon">
+                <view catchtap="upbackgroundimage" class="icon_setbackgroundimage_box">
+                    <image src="{{icon_upbackgroundimage}}"></image>
+                </view>
+                <view class="upbackgroundimage_num">{{data.setbackgroundimage}}</view>
+            </view>
+        </view>
+        <!-- 图片信息 -->
+        <view class="createTime">{{createTime}}</view>
+        <view class="copyright">版权:用户上传,侵权请联系删除</view>
+        <view class="_id"><text user-select="true">{{data._id}}</text></view>
+        <view class="iphone" style="top: {{MenuBottom}}px;height: {{windowHeight-MenuBottom-(windowWidth/750*100)}}px;">
+            <image mode="widthFix" src="{{iphone}}"></image>
+            <image mode="widthFix" src="{{data.original}}"></image>
+        </view>
+        <view class="keywords" style="top: {{MenuBottom}}px;height: {{windowHeight-MenuBottom-(windowWidth/750*100)}}px;">
+            <view class="keyword" id="av" wx:if="{{data.isAcross}}">横屏</view>
+            <view class="keyword" id="av" wx:if="{{!data.isAcross}}">竖屏</view>
+            <view class="keyword" wx:for="{{data.keywords}}" wx:key="index" catchtap="TapkeyWordsToSearch" data-search="{{item}}">{{item}}</view>
+        </view>
+        <!-- 收藏成功 -->
+        <view wx:if="{{collectionOk}}" class="collectionOk">
+            <mp-icon style="margin-left: 10rpx;" type="field" icon="done2" color="block" size="{{windowWidth/750*35}}"></mp-icon>
+            <text>收藏成功</text>
+            <text catchtap="gomycollection" style="color: crimson;position: absolute;right: 38rpx;">去看看</text>
+            <mp-icon catchtap="gomycollection" style="position: absolute;top: -3rpx; right: 10rpx;width: 30rpx;" type="field" icon="arrow" color="crimson" size="{{windowWidth/750*28}}"></mp-icon>
+        </view>
+    </swiper-item>
+</swiper>

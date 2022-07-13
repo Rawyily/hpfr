@@ -1,0 +1,28 @@
+<block wx:if="{{keywords.length > 0}}">
+    <view class="scrollbox">
+        <!-- 加载一次的数据 -->
+        <scroll-view scroll-top="{{keywords_scrollTop}}" enhanced="true" show-scrollbar="{{false}}" scroll-y="true" bindscrolltolower="getkeywords" class="scrollview">
+            <view wx:for="{{keywords}}" wx:key="index">
+                <!-- 广告 -->
+                <view style="height: 200rpx;width: 750rpx;float: left; overflow: hidden;" wx:if="{{keywords_advertising_img[index].imgurl}}">
+                    <image catchtap="previewImage" data-url="{{keywords_advertising_img[index].imgurl}}"  style="height: 200rpx;width: 750rpx;" mode="scaleToFill" src="{{keywords_advertising_img[index].imgurl}}"></image>
+                </view>
+                <!-- 关键词 -->
+                <view catchtap="goKeywords" data-keyword="{{item}}" wx:for="{{item.array}}" wx:key="index" class="keywords">
+                    {{item.keyword}}
+                    <mp-icon style="position: relative;top: -3rpx;" icon="eyes-on" color="black" size="{{windowWidth/750*32}}"></mp-icon>
+                    <text style="font-size: 28rpx;color: rgb(9, 87, 231);position: relative;left: 2rpx;top: 0rpx;">{{item.numberofuse}}</text>
+                </view>
+            </view>
+            <!-- mp-loading加载提示 -->
+            <view style="width: 750rpx; height: 100rpx;float: left;" wx:if="{{keywords_loading}}">
+                <mp-loading style="position: relative;top: 40rpx;"></mp-loading>
+            </view>
+            <!-- 全部加载完成提示 -->
+            <view class="loaded" wx:if="{{keywords_end}}">-END-</view>
+        </scroll-view>
+    </view>
+</block>
+<block wx:else>
+    <mp-loading class="mp-loading" />
+</block>

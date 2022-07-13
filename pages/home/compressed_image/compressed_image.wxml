@@ -1,0 +1,36 @@
+<!--pages/home/compressed_image/compressed_image.wxml-->
+<view style="height: 100vh;width: 100vw;display: flex;flex-direction: column;">
+    <view style="height: {{MenuTop}}px;"></view>
+    <view style="height: {{MenuHeight}}px;width: {{MenuLeft}}px;line-height: {{MenuHeight}}px;text-align: center;font-weight: bold;">图片质量压缩</view>
+    <view style="flex: 1;">
+        <swiper bindchange="swiperChange" style="width:100%;height: 100%;" current="1">
+            <swiper-item style="width: inherit;height: inherit;" item-id="0"></swiper-item>
+            <swiper-item style="width: inherit;height: inherit;" item-id="1">
+                <view class="box">
+                    <!-- 零张 -->
+                    <view wx:if="{{choose == undefined}}" style="flex: 1; text-align: center;display: flex;align-items: center;justify-content: center;">
+                        -请选择需要压缩的图片(<text style="font-weight: bold;">原图</text>)-
+                    </view>
+                    <!-- 一张 -->
+                    <view wx:if="{{choose.length == 1}}" style="flex: 1; width: 750rpx;display: flex;align-items: center;">
+                        <image catchtap="previewImage" mode="widthFix" src="{{src}}" style="width:{{width-(2*padding)}}px;padding-left: {{padding}}px;padding-right: {{padding}}px;"></image>
+                    </view>
+                    <!-- 多张 -->
+                    <view wx:if="{{choose.length > 1}}" style="flex: 1;padding: 15rpx;">
+                        <image catchtap="previewImage" data-url="{{item}}" mode="aspectFit" wx:for="{{src9}}" wx:key="index" src="{{item}}" style="float: left; width: 220rpx;margin-left: 10rpx;margin-right: 10rpx; height: 30%;margin-bottom: 3%;margin-top: 3%;{{index == 3 ? 'clear:left;':''}}{{index == 6 ? 'clear:left;':''}}"></image>
+                    </view>
+                    <view class="vanslider">
+                        <van-slider bind:change="changeV" active-color="red" value="{{ currentValue }}" use-button-slot bind:drag="onDrag">
+                            <view class="custom-button" slot="button">{{ currentValue }}</view>
+                        </van-slider>
+                    </view>
+                    <view class="button">
+                        <van-button bind:click="choose" custom-class="buttons" type="primary">选择图片</van-button>
+                        <van-button bind:click="compress" loading="{{compressLoading}}" custom-class="buttons" type="primary">开始压缩</van-button>
+                        <van-button bind:click="save" custom-class="buttons" type="primary">保存本地</van-button>
+                    </view>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>

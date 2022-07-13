@@ -1,0 +1,22 @@
+<!--pages/user/setNewNicknameOrHeadportrait/setNewNicknameOrHeadportrait.wxml-->
+<swiper class="swiper" current="{{item_id}}" bindchange="swiperchange">
+    <swiper-item item-id="0"></swiper-item>
+    <swiper-item item-id="1">
+    <view style="width: 750rpx;height: {{MenuBottom*1.5}}px;"></view>
+        <view data-weui-theme="{{theme}}">
+            <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+                <image class="avatar" src="{{avatarUrl}}"></image>
+            </button>
+            <mp-form>
+                <mp-cells>
+                    <mp-cell title="昵称">
+                        <input bindconfirm="bindconfirm" bindblur="bindconfirm" type="nickname" class="weui-input" placeholder="{{name}}" />
+                    </mp-cell>
+                </mp-cells>
+            </mp-form>
+        </view>
+        <view class="save">
+        <button type="primary" catchtap="save">保存</button>
+        </view>
+    </swiper-item>
+</swiper>

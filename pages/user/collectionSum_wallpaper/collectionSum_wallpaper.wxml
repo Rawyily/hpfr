@@ -1,0 +1,17 @@
+<view class="starusBar" bindtap="scrollTop" style="height: {{SystemInfo.statusBarHeight}}px;"></view>
+<view bindtap="scrollTop" style="width: 750rpx;height: {{Menu.bottom}}px;position: relative;">
+    <view class="title" style="width: {{Menu.left-(SystemInfo.windowWidth - Menu.right)*2}}px;height: {{Menu.height+2}}px;line-height: {{Menu.height+2}}px; left: {{SystemInfo.windowWidth - Menu.right}}px;">
+        {{tap==2 ? 'Vertical':'Across'}}
+    </view>
+</view>
+<view class="content" style="height:{{SystemInfo.windowHeight - Menu.bottom }}px;">
+    <swiper class="swiper" current="1" bindchange="changeTap">
+        <swiper-item item-id="0"></swiper-item>
+        <swiper-item item-id="1">
+            <include src="1_across.wxml"></include>
+        </swiper-item>
+        <swiper-item item-id="2">
+            <include src="2_vertical.wxml"></include>
+        </swiper-item>
+    </swiper>
+</view>

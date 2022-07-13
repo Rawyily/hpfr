@@ -1,0 +1,40 @@
+<scroll-view refresher-enabled="{{enabled}}" refresher-triggere="{{triggered}}" bindrefresherrefresh="onRefresh" style="width: 730rpx;height:100%;" bindscrolltolower="getMyInfringement" scroll-top="{{my_ScrollTop}}" enhanced="true" show-scrollbar="{{false}}" scroll-y>
+    <view catchtap="addNew" class="addNewInfringement">
+        <mp-icon icon="add" color="black" size="{{windowWidth/750*52}}" style="position: relative;top: -3rpx;left: 2rpx;"></mp-icon>
+        <text>添加新的</text>
+    </view>
+    <block wx:if="{{MyInfringement.length == 0 && my_loading == true}}">
+        <mp-loading style="width: 250rpx;position: absolute;top: 50%;left: 250rpx;" />
+    </block>
+    <block wx:else>
+        <view wx:for="{{MyInfringement}}" wx:key="index" class="myInfringementList" catchtap="goInfringementDetail" data-data="{{item}}">
+            <view class="myInfringementList_imgbox">
+                <image mode="aspectFit" src="{{item.id_imgurl[0]}}" catchtap="previewImage" data-url="{{item.id_imgurl[1]}}"></image>
+            </view>
+            <view class="myInfringementList_id" catchtap="goInfringement" data-classify="{{item.classify}}" data-_id="{{item.infringement_id}}">{{item.infringement_id}}</view>
+            <view class="myInfringementList_classify">目标内容的分类：
+                <view>
+                    {{item.classify == "headPortrait" ? "头像":""}}
+                    {{item.classify == "headPortraitFrame" ? "头像框":""}}
+                    {{item.classify == "wallpaper-across" ? "壁纸":""}}
+                    {{item.classify == "wallpaper-vertical" ? "壁纸":""}}
+                </view>
+            </view>
+            <view class="myInfringementList_reviewTheResults" style="{{item.reviewTheResults == 1 ? 'border: 2px solid #006633;color: #006633;':''}}{{item.reviewTheResults == 2 ? 'border: 2px solid rgb(255, 126, 126);color: rgb(255, 126, 126);':''}}">
+                {{item.reviewTheResults == 0 ? '待审核':''}}
+                {{item.reviewTheResults == 1 ? '已通过':''}}
+                {{item.reviewTheResults == 2 ? '未通过':''}}
+            </view>
+            <view class="time">
+                <view class="day"> <text style="font-size: 50rpx;color: rgb(248, 58, 0);">{{item.createTimeD}}</text>日</view>
+                <view class="ym">{{item.createTimeY}}年{{item.createTimeM}}月</view>
+            </view>
+        </view>
+        <!-- mp-loading加载提示 -->
+        <view style="width: 750rpx; height: 100rpx;float: left;" wx:if="{{my_loading}}">
+            <mp-loading style="position: relative;top: 40rpx;"></mp-loading>
+        </view>
+        <!-- 全部加载完成提示 -->
+        <view style="width: 750rpx;height: 120rpx;line-height: 120rpx;text-align: center;float: left;color: #ffaaaa;" wx:if="{{my_end}}">-END-</view>
+    </block>
+</scroll-view>

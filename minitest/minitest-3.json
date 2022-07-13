@@ -1,0 +1,23 @@
+{
+  "meta": {
+    "caseId": "38db7533-d937-42c8-b17e-ebd91c1f6cb6",
+    "caseName": "minitest-3",
+    "remarks": "",
+    "version": "0.0.1",
+    "startTime": 0,
+    "endTime": 0
+  },
+  "env": {
+    "wxapplibVersion": "",
+    "openid": "o6zAJs6ugnHiZgOUaOocRlpfZn4E",
+    "entry": {
+      "path": "",
+      "query": "",
+      "scene": 1001
+    },
+    "mock": [
+      "none"
+    ]
+  },
+  "commands": []
+}

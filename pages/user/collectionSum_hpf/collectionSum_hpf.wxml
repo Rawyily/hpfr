@@ -1,0 +1,52 @@
+<!--pages/user/collectionSum_hpf/collectionSum_hpf.wxml-->
+<swiper current="{{item_id}}" bindchange="back" style="height: 100vh;width: 750rpx;">
+    <swiper-item item-id="0">
+
+    </swiper-item>
+    <swiper-item item-id="0">
+        <!-- 内容 -->
+        <view class="content" style="height:{{}}px;">
+            <scroll-view refresher-background="#ffd100" refresher-triggered="{{refresher_triggered}}" refresher-enabled="true" bindrefresherrefresh="bindrefresherpulling" refresher-default-style="none"  scroll-top="{{scrollTop}}" enhanced="true" show-scrollbar="{{false}}" scroll-y="true" bindscrolltolower="bindscrolltolower" class="scroll_view">
+                <view style="width: 750rpx;height: 170rpx;padding-top:{{statusBarHeight}}px;background-color: #ffd100;">
+                    <mp-loading hidden="{{!refresher_triggered}}" style="position: relative;top: 120rpx;height: 50rpx;"></mp-loading>
+                </view>
+                <!-- 列表 -->
+                <view class="Hpflist">
+                    <view wx:for="{{hpfList}}" wx:key="index" class="listbox" capture-bind:longpress="longpress" catchtap="setmyhpf" data-hi="{{item}}">
+                        <image src="{{item.thumbnail}}"></image>
+                        <view class="name">{{item.name}}</view>
+                    </view>
+                </view>
+                <view wx:if="{{hpfList.length == 0}}" style="width: 750rpx; height: 30vh;clear: left;"></view>
+                <view wx:if="{{loading}}" class="loading">
+                    <mp-loading></mp-loading>
+                </view>
+                <view wx:if="{{end}}" class="end">- END -</view>
+                <view style="width: 750rpx;height: 120rpx;"></view>
+            </scroll-view>
+        </view>
+        <!-- 头像和头像框 -->
+        <view class="headportrait" catchtap="setbackdground" style="padding-top:{{statusBarHeight}}px;{{background}}">
+            <view class="hphpf" catchtap="set_hp_style">
+                <view class="hp" id="{{hp_circular ? '':'hp_circular'}}" style="{{hp_style}}">
+                    <image src="{{hp_src}}" id="{{hp_circular ? '':'hp_circular'}}"></image>
+                </view>
+                <view class="hpf">
+                    <image src="{{hpf_src}}" class="hpf"></image>
+                </view>
+            </view>
+        </view>
+        <!-- 底部导航栏 -->
+        <view class="bottomButton">
+            <view class="cancel" bindtap="cancel">
+                <van-button custom-class="cancelButton" color="#7232dd" plain>返回</van-button>
+            </view>
+            <view class="save" bindtap="save">
+                <van-button custom-class="saveButton" color="linear-gradient(to right, #4bb0ff, #6149f6)">
+                    保存
+                </van-button>
+            </view>
+        </view>
+        <view catchtap="scrollTop" style="width: 750rpx;height: {{statusBarHeight}}px;position: absolute;top: 0;"></view>
+    </swiper-item>
+</swiper>

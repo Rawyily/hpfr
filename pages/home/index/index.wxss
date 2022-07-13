@@ -1,0 +1,144 @@
+/* pages/home/index/index.wxss */
+page{
+    background:#ffffff;
+}
+.swiperImages {
+    width: 750rpx;
+    height: 420rpx;
+}
+
+.welcome {
+    position: absolute;
+    top: 0;
+    width: 750rpx;
+    height: 420rpx;
+    z-index: -1;
+    animation: welcome 3.5s;
+    /* background-color: rgb(255, 255, 255); */
+    line-height: 420rpx;
+    text-align: center;
+    font-weight: bold;
+    font-size: 50rpx;
+    overflow: hidden;
+    color: blue;
+}
+
+.welcome .pink {
+    color: #05e7e7;
+    font-size: 60rpx;
+}
+
+@keyframes welcome {
+    0% {
+        top: -420rpx;
+        z-index: 1;
+        letter-spacing: 20rpx;
+        font-size: 80rpx;
+    }
+
+    20% {
+        top: 0rpx;
+        z-index: 1;
+        letter-spacing: 5rpx;
+        font-size: 50rpx;
+
+    }
+
+    80% {
+        top: 0rpx;
+        z-index: 1;
+        letter-spacing: 5rpx;
+        font-size: 50rpx;
+
+    }
+
+    100% {
+        top: -420rpx;
+        z-index: 1;
+        letter-spacing: 20rpx;
+        font-size: 80rpx;
+
+    }
+}
+
+.scrollView {
+    background-color: rgb(183, 229, 255);
+    padding-top: 50rpx;
+}
+
+.swiper {
+    width: 650rpx;
+    height: 150rpx;
+    /* background-color: rgb(245, 245, 245); */
+    margin-left: 50rpx;
+    margin-bottom: 50rpx;
+}
+.content{
+    background-color: rgb(245, 245, 245);
+}
+/* 说明 */
+.instructions {
+    width: 630rpx;
+    height: 130rpx;
+    border: 10rpx solid #fff;
+    font-size: 18rpx;
+    text-align: left;
+    letter-spacing: 1rpx;
+    background-color: #fff;
+    font-weight: bolder;
+}
+
+.go {
+    width: 600rpx;
+    height: 150rpx;
+    line-height: 150rpx;
+    text-align: left;
+    font-weight: bold;
+    font-size: x-large;
+    background-color: rgb(187, 255, 0);
+    border-left: 50rpx solid rgb(187, 255, 0);
+}
+.type {
+    width: 40rpx;
+    height: 100rpx;
+    position: absolute;
+    left: 30rpx;
+    top: 25rpx;
+    border: 1px solid rgb(255, 138, 138);
+    writing-mode: tb-rl;
+    font-size: 25rpx;
+    color: #ff4800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    position: absolute;
+    left: 80rpx;
+    top: 40rpx;
+    width: 500rpx;
+    font-size: 36rpx;
+    font-weight: bold;
+}
+
+.secondtitle {
+    position: absolute;
+    left: 80rpx;
+    top: 90rpx;
+    width: 500rpx;
+    font-size: 22rpx;
+    color: rgb(100, 100, 100);
+    font-weight: bolder;
+}
+
+.arrow {
+    line-height: 150rpx;
+    position: absolute;
+    right: 50rpx;
+    transition: transform 1s;
+}
+
+.arrow:active {
+    transform: rotate(36deg);
+}

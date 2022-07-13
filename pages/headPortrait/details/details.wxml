@@ -1,0 +1,92 @@
+<swiper current="1" class="swiper" bindchange="callback">
+    <swiper-item item-id="0" class="callback">
+    </swiper-item>
+    <swiper-item item-id="1">
+        <view>
+            <!-- 左滑返回 -->
+            <view style="height: {{MenuHeight+MenuTop}}px;line-height:{{MenuHeight+MenuTop+MenuTop}}px;" class="top">左滑返回</view>
+            <!-- 警告 -->
+            <view wx:if="{{warning_first}}" class="warning">
+                <mp-icon style="position: relative;top: -5rpx;" icon="report-problem" color="rgb(255, 68, 0)" size="{{windowWidth/750*30}}"></mp-icon>
+                {{warning_first}}
+            </view>
+            <view wx:if="{{warning_second}}" class="warning">
+                <mp-icon style="position: relative;top: -5rpx;" icon="report-problem" color="rgb(255, 68, 0)" size="{{windowWidth/750*30}}"></mp-icon>
+                {{warning_second}}
+            </view>
+            <!-- 图片 -->
+            <view class="imgUrl">
+                <image src="{{data.original}}" wx:if="{{data.original}}" catchtap="previewImage" data-imgurl="{{data.original}}"></image>
+                <block wx:else>
+                    <mp-loading style="position: relative;top: 250rpx;"></mp-loading>
+                </block>
+            </view>
+            <!-- 名字 -->
+            <view class="name" wx:if="{{nameshow}}">{{data.name}}</view>
+            <!-- 数据 -->
+            <view class="statistical">
+                <view class="statisticalflex">
+                    <view class="statistical_icon">
+                        <mp-icon class="statistical_icon_icon"  style="position: relative;top: 3rpx;" icon="eyes-on" color="blue" size="{{windowWidth/750*50}}"></mp-icon>
+                    </view>
+                    <view class="statistical_num">{{data.browse}}</view>
+                </view>
+                <view class="statisticalflex">
+                    <view class="statistical_icon">
+                        <mp-icon class="statistical_icon_icon" type="field" icon="star" color="#ff3c00" size="{{windowWidth/750*50}}"></mp-icon>
+                    </view>
+                    <view class="statistical_num">{{data.collection}}</view>
+                </view>
+                <view class="statisticalflex">
+                    <view class="statistical_icon">
+                        <mp-icon class="statistical_icon_icon" style="position: relative;top: 3rpx;" icon="play" color="red" size="{{windowWidth/750*50}}"></mp-icon>
+                    </view>
+                    <view class="statistical_num">{{data.create}}</view>
+                </view>
+                <view class="statisticalflex">
+                    <view class="statistical_icon">
+                        <mp-icon class="statistical_icon_icon" icon="download" color="green" size="{{windowWidth/750*50}}"></mp-icon>
+                    </view>
+                    <view class="statistical_num">{{data.download}}</view>
+                </view>
+            </view>
+            <!-- 分类 -->
+            <view class="classifyAndkKeywords">
+                <view class="classifyAndkKeywords_son" style="color: #005f4f;">分类:</view>
+                <view wx:for="{{data.classify}}" wx:key="index" catchtap="tpaKeyWordsToSearch" data-search="{{item}}" class="classifyAndkKeywords_son">{{item}}</view>
+                <view class="classifyAndkKeywords_son" id="classifyAndkKeywords_son">关键词:</view>
+                <view wx:for="{{data.keywords}}" wx:key="index"  catchtap="tpaKeyWordsToSearch" data-search="{{item}}" id="classifyAndkKeywords_son" class="classifyAndkKeywords_son">{{item}}</view>
+            </view>
+            <view class="createTime">{{createTime}}</view>
+            <view class="copyright">版权:用户上传,侵权请联系删除</view>
+            <view class="_id"><text user-select="true">{{data._id}}</text></view>
+            <!-- 按钮 -->
+            <view class="buttonbox">
+                <view class="buttonborde">
+                    <view class="button" catchtap="collection">
+                        <mp-icon class="icon" style="position: relative;top: -5rpx;" type="{{collectionIconType}}" icon="star" color="#ff3c00" size="{{windowWidth/750*45}}"></mp-icon>收藏
+                    </view>
+                </view>
+                <view class="buttonborde">
+                    <view class="button" catchtap="addCanvas">
+                        <mp-icon style="position: relative;top: -3rpx;" icon="play" color="red" size="{{windowWidth/750*45}}"></mp-icon>生成器
+                    </view>
+                </view>
+                <view class="buttonborde">
+                    <view class="button" catchtap="download">
+                        <mp-icon style="position: relative;top: -5rpx;" icon="download" color="red" size="{{windowWidth/750*45}}"></mp-icon>下载
+                    </view>
+                </view>
+            </view>
+            <!-- 收藏成功 -->
+            <view wx:if="{{collectionOk}}" class="collectionOk">
+                <mp-icon style="margin-left: 10rpx;" type="field" icon="done2" color="block" size="{{windowWidth/750*35}}"></mp-icon>
+                <text>收藏成功</text>
+                <text catchtap="gomycollection" style="color: crimson;position: absolute;right: 38rpx;">去看看</text>
+                <mp-icon catchtap="gomycollection" style="position: absolute;top: -3rpx; right: 10rpx;width: 30rpx;" type="field" icon="arrow" color="crimson" size="{{windowWidth/750*28}}"></mp-icon>
+            </view>
+            <!-- 使用 -->
+            <view class="use" catchtap="uABC">u</view>
+        </view>
+    </swiper-item>
+</swiper>

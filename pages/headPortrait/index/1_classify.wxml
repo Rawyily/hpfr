@@ -1,0 +1,13 @@
+<block wx:if="{{classifyImgUrl.length>0}}">
+    <scroll-view scroll-top="{{classify_scrollTop}}" enhanced="true" show-scrollbar="{{false}}" scroll-y="true" class="classifyscroll">
+        <view catchtap="classifyTap" data-name="{{item.name}}" wx:for="{{classifyImgUrl}}" wx:key="index" class="classify">
+            <view class="classify_imgbox">
+                <image mode="widthFix" src="{{item.imgurl}}"></image>
+            </view>
+            <view class="classify_name">{{item.name}}</view>
+        </view>
+    </scroll-view>
+</block>
+<block wx:else>
+    <mp-loading class="mp-loading" />
+</block>

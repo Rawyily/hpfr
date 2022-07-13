@@ -1,0 +1,46 @@
+<!--pages/headPortrait/search/search.wxml-->
+<swiper class="swiper" current="1" bindchange="swiperchange">
+    <swiper-item class="swiper" item-id="0"></swiper-item>
+    <swiper-item class="swiper" item-id="1">
+        <view class="title" style="height: {{MenuBottom}}px;" catchtap="scrollTop">
+            <view class="titletext" style="width: {{MenuLeft}}px; height: {{MenuHeight+2}}px;line-height: {{MenuHeight}}px;">搜索-{{search}}</view>
+        </view>
+        <block wx:if="{{gather.length > 0 | hp.length > 0}}">
+            <scroll-view style="height: {{windowHeight - MenuBottom}}px;" scroll-top="{{scrollTop}}" enhanced="true" show-scrollbar="{{false}}" scroll-y="true" bindscrolltolower="bindscrolltolower" class="scrollview">
+                <!-- 搜索 -->
+                <van-search bind:search="bindsearch" value="{{ value }}" shape="round" background="none" placeholder="{{placeholder}}" />
+                <view class="scrollview_view" wx:for="{{hp}}" wx:key="index">
+                    <!-- 广告 -->
+                    <view class="advertising" wx:if="{{advertising_img[index].imgurl}}">
+                        <image catchtap="previewImage" data-url="{{advertising_img[index].imgurl}}" mode="scaleToFill" src="{{advertising_img[index].imgurl}}"></image>
+                    </view>
+                    <!-- 集合 -->
+                    <view wx:if="{{index == 0}}" wx:for="{{gather}}" wx:key="index" class="gather" catchtap="go_gather" data-data="{{item}}">
+                        <view class="cover">
+                            <image src="{{item.cover}}"></image>
+                        </view>
+                        <view class="gathertitle">{{item.name}}</view>
+                        <view class="arrowicon">
+                            <mp-icon style="position: relative;top: -5rpx;" icon="arrow" color="#000" size="{{windowWidth/750*45}}"></mp-icon>
+                        </view>
+                        <view class="introduce">{{item.introduce}}</view>
+                        <view class="time">上次更新时间：{{item._updateTime}}</view>
+                    </view>
+                    <!-- 头像 -->
+                    <view wx:for="{{item.array}}" wx:key="index" class="imgbox">
+                        <image class="img" src="{{item.thumbnail}}" catchtap="goDetails" data-data="{{item}}"></image>
+                    </view>
+                </view>
+                <!-- mp-loading加载提示 -->
+                <view style="width: 730rpx; height: 100rpx;float: left;" wx:if="{{loading}}">
+                    <mp-loading style="position: relative;top: 40rpx;"></mp-loading>
+                </view>
+                <!-- 全部加载完成提示 -->
+                <view class="loaded" wx:if="{{End}}">-END-</view>
+            </scroll-view>
+        </block>
+        <block wx:else>
+            <mp-loading class="mp-loading" />
+        </block>
+    </swiper-item>
+</swiper>

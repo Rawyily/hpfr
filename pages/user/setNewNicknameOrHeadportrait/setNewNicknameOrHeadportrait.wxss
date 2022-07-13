@@ -1,0 +1,29 @@
+/* pages/user/setNewNicknameOrHeadportrait/setNewNicknameOrHeadportrait.wxss */
+.swiper{
+    width: 750rpx;
+    height: 100vh;
+    /* background-color: rgb(216, 203, 203); */
+}
+.avatar-wrapper {
+    padding: 0;
+    width: 300rpx !important;
+    border-radius: 4px;
+    margin-top: 40px;
+    margin-bottom: 150rpx;
+  }
+  
+  .avatar {
+    display: block;
+    width: 300rpx;
+    height: 300rpx;
+  }
+  
+  .container {
+    display: flex;
+  }
+  .save{
+      width: 250rpx;
+      position: absolute;
+      bottom: 120rpx;
+      left: 250rpx;
+  }

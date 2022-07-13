@@ -1,0 +1,280 @@
+/* pages/HeadPortrait_s/details/details.wxss */
+page {
+    background: linear-gradient(30deg, rgb(255, 211, 211),#bdf0ff);
+}
+
+.swiper {
+    width: 750rpx;
+    height: 100vh;
+}
+
+/* current:0 */
+.callback {
+    line-height: 100vh;
+    font-weight: bolder;
+    font-size: 100rpx;
+    text-align: center;
+}
+
+/* 左滑返回 */
+.top {
+    text-align: center;
+    color: rgb(37, 132, 209);
+    animation: top 2S;
+}
+
+@keyframes top {
+    from {
+        color: rgba(37, 132, 209, 0);
+    }
+
+    to {
+        color: rgb(37, 132, 209);
+    }
+}
+
+/* 警告 */
+.warning {
+    width: 750rpx;
+    height: 30rpx;
+    font-size: 20rpx;
+    text-align: center;
+    line-height: 30rpx;
+    color: rgb(255, 68, 0);
+    opacity: 0.8;
+    /* background-color: #fff; */
+}
+
+/* 图片 */
+.imgUrl {
+    width: 500rpx;
+    height: 500rpx;
+    margin: auto;
+    margin-top: 20rpx;
+}
+
+.imgUrl>image {
+    width: 500rpx;
+    height: 500rpx;
+}
+
+.name {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    margin-top: 20rpx;
+    width: 750rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    font-size: large;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+/* 数据 */
+.statistical {
+    width: 500rpx;
+    margin: auto;
+    height: 100rpx;
+    text-align: center;
+    display: flex;
+    /* background-color: rgb(255, 255, 255); */
+}
+
+.statistical .statisticalflex {
+    flex: 1;
+    height: 100rpx;
+    /* background-color: rgb(255, 220, 220); */
+}
+
+.statistical .statisticalflex .statistical_icon {
+    flex: 1;
+    height: 50rpx;
+}
+
+.statistical .statisticalflex .statistical_num {
+    flex: 1;
+    height: 50rpx;
+    /* background-color: burlywood; */
+    line-height: 50rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+    text-align: center;
+}
+
+.statistical .statisticalflex .statistical_icon_icon {
+    flex: 1;
+    height: 50rpx;
+}
+
+/* 分类和关键词 */
+.classifyAndkKeywords {
+    width: 750rpx;
+    /* background-color: #fff; */
+    padding: 10rpx;
+}
+
+.classifyAndkKeywords .classifyAndkKeywords_son {
+    float: left;
+    /* width: 130rpx; */
+    padding-left: 12rpx;
+    padding-right: 12rpx;
+    height: 50rpx;
+    margin: 7rpx;
+    border: 1rpx solid #26b9e6;
+    line-height: 50rpx;
+    text-align: center;
+    font-size: 28rpx;
+    border-radius: 2px;
+    /* background: rgb(255, 164, 164); */
+}
+
+.classifyAndkKeywords .classifyAndkKeywords_son:active {
+    border: 1rpx solid rgb(255, 0, 242);
+    color: rgb(255, 0, 242);
+}
+
+#classifyAndkKeywords_son:active {
+    border: 1rpx solid rgb(0, 255, 42);
+    color: rgb(0, 109, 18);
+}
+
+#classifyAndkKeywords_son {
+    color: rgb(255, 102, 0);
+    border: 1rpx solid rgb(255, 102, 0);
+}
+
+.createTime {
+    width: 750rpx;
+    height: 60rpx;
+    position: absolute;
+    bottom: 30rpx;
+    font-size: 20rpx;
+    line-height: 20rpx;
+    text-align: center;
+}
+
+.copyright {
+    width: 750rpx;
+    height: 30rpx;
+    position: absolute;
+    bottom: 30rpx;
+    font-size: 20rpx;
+    line-height: 20rpx;
+    text-align: center;
+}
+
+._id {
+    width: 750rpx;
+    height: 30rpx;
+    position: absolute;
+    bottom: 0;
+    font-size: 20rpx;
+    line-height: 20rpx;
+    text-align: center;
+}
+
+.buttonbox {
+    width: 700rpx;
+    height: 60rpx;
+    display: flex;
+    position: absolute;
+    bottom: 100rpx;
+    /* background-color: #fff; */
+    margin-left: 25rpx;
+    margin-right: 25rpx;
+}
+
+.buttonbox .buttonborde {
+    flex: 1;
+    height: 60rpx;
+}
+
+.buttonbox .buttonborde .button {
+    width: 85%;
+    height: 60rpx;
+    margin: auto;
+
+    background-color: rgba(28, 177, 92, 1);
+    color: rgb(255, 255, 255);
+    border-radius: 2px;
+    text-align: center;
+    line-height: 60rpx;
+    font-size: 30rpx;
+    font-weight: bolder;
+    letter-spacing: 3rpx;
+}
+
+.buttonbox .buttonborde .button:active {
+    background-color: rgb(40, 250, 131);
+    color: rgb(0, 0, 0);
+}
+
+
+.collectionOk {
+    width: 700rpx;
+    height: 70rpx;
+    margin-left: 25rpx;
+    margin-right: 25rpx;
+    background-color: #fff;
+    position: absolute;
+    bottom: 16rpx;
+    border-radius: 10rpx;
+    line-height: 70rpx;
+    animation: collectOkinit 500ms;
+    z-index: 1;
+}
+
+@keyframes collectOkinit {
+    from {
+        left: 750rpx;
+    }
+
+    to {
+        left: 0rpx;
+    }
+}
+
+.collectionOk text {
+    font-size: 25rpx;
+    font-weight: bolder;
+}
+
+.use {
+    /* background-color: #fff; */
+    width: 100rpx;
+    height: 100rpx;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    line-height: 100rpx;
+    text-align: center;
+    font-size: 48rpx;
+    font-weight: bolder;
+    font-family: cursive;
+    animation: use 3S infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    /* background-color: #fff; */
+}
+
+.use:active {
+    color: rgb(0, 255, 76);
+}
+
+@keyframes use {
+    0% {
+        color: rgb(17, 0, 255);
+        font-size: 30rpx;
+    }
+
+    50% {
+        color: rgb(255, 0, 0);
+        font-size: 90rpx;
+    }
+
+    100% {
+        color: rgb(255, 255, 255);
+        font-size: 30rpx;
+    }
+}

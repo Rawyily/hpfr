@@ -1,0 +1,11 @@
+<!-- <swiper style="width: 750rpx;height: 100vh;" current="1" bindchange="swiperchange">
+    <swiper-item style="width: 750rpx;height: 100vh;" item-id="0"></swiper-item>
+    <swiper-item style="width: 750rpx;height: 100vh;" item-id="1"> -->
+        <view bindtap="switchTab_homeIndex" class="button" style="z-index: 99; top: {{MenuTop}}px;left: {{windowWidth - MenuRight}}px;height: {{MenuHeight -2 }}px;line-height: {{MenuHeight -2 }}px; width: {{MenuWidth - 2 }}px;border-radius:{{MenuHeight/2}}px;">
+            <text>跳过</text>
+        </view>
+        <view style="z-index: 100;" wx:if="{{videoUrl}}">
+            <video bindplay="bindplay" binderror="switchTab_homeIndex" bindended="switchTab_homeIndex" autoplay controls="{{false}}" src="{{videoUrl}}" class="video"></video>
+        </view>
+    <!-- </swiper-item>
+</swiper> -->

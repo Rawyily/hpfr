@@ -1,0 +1,108 @@
+.hint {
+    position: absolute;
+    left: 0;
+    font-size: 33rpx;
+    text-align: center;
+    color: white;
+    z-index: 10;
+}
+
+.select{
+    /* background-color: #fff; */
+    z-index: 10;
+    position: absolute;
+    bottom: 50rpx;
+    width: 750rpx;
+    margin-top: 60px;
+    
+}
+.select_button{
+    position: relative;
+    height: 100rpx;
+}
+.upload{
+    position: absolute;
+    left: 60rpx;
+}
+.save{
+    position: absolute;
+    right: 60rpx;
+}
+.button{
+    /* background-color: rgb(255, 172, 172); */
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 400rpx;
+    height: 250rpx;
+}
+.arrow1{
+    width: 60rpx;
+
+    transform: rotate(-90deg);
+    /* background-color: rgb(255, 0, 0); */
+    position: absolute;
+    left: 120rpx;
+}
+.arrow2{
+    width: 60rpx;
+    /* background-color: rgb(255, 243, 243); */
+    position: absolute;
+    left: 200rpx;
+    top: 80rpx;
+
+}
+.arrow3{
+    width: 60rpx;
+    transform: rotate(90deg);
+    /* background-color: rgb(64, 216, 97); */
+    position: absolute;
+    left: 120rpx;
+    top: 160rpx;
+}
+.arrow4{
+    width: 60rpx;
+    transform: rotate(180deg); 
+    /* background-color: rgb(168, 139, 139); */
+    position: absolute;
+    top: 80rpx;
+    left: 40rpx;
+
+}
+.refresh{
+   width: 80rpx;
+   /* background-color: rgb(255, 0, 0); */
+   position: absolute;
+   top: 90rpx;
+   left: 110rpx;
+}
+.big{
+    width: 100rpx;
+    height: 100rpx;
+    /* background-color: rgb(255, 0, 0); */
+    position: absolute;
+    right: 20rpx;
+    top: 30rpx;
+    text-align: center;
+    line-height: 100rpx;
+    font-size: 80rpx;
+    color: #fff;
+
+}
+.small{
+    width: 100rpx;
+    height: 100rpx;
+    /* background-color: rgb(51, 255, 0); */
+    position: absolute;
+    right: 20rpx;
+    top: 130rpx;
+    text-align: center;
+    line-height: 100rpx;
+    font-size: 100rpx;
+    color: #fff;
+
+}
+.callback{
+    position: absolute;
+    z-index: 10;
+}

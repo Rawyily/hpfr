@@ -1,0 +1,20 @@
+<!--pages/user/loginRecord/loginRecord.wxml-->
+<swiper class="swiper" current="1" bindchange="swiperchange">
+    <swiper-item class="swiper" item-id="0"></swiper-item>
+    <swiper-item class="swiper" item-id="1">
+        <scroll-view class="scroll" bindscrolltolower="getRecord" scroll-top="{{scrollTop}}" enhanced="true" show-scrollbar="{{false}}" scroll-y="true">
+            <view style="height: {{MenuBottom+20}}px;"></view>
+            <view class="record1">
+                <mp-icon catchtap="tapClear" icon="delete" color="pink" size="{{windowWidth/750*50}}" style="position: relative;top: -5rpx;"></mp-icon>
+                总共{{all.length}}条
+            </view>
+            <view class="record" wx:for="{{array}}" wx:key="index">
+                {{item}}
+            </view>
+            <view class="record3" wx:if="{{end}}">没有了</view>
+            <mp-dialog title="询问" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+                <view>是否清空全部记录？</view>
+            </mp-dialog>
+        </scroll-view>
+    </swiper-item>
+</swiper>

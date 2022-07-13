@@ -1,0 +1,12 @@
+<!--pages/home/set_indexvideo_open/set_indexvideo_open.wxml-->
+<swiper class="swiper" current="{{item_id}}" bindchange="swiperchange">
+    <swiper-item class="swiper" item-id="0"></swiper-item>
+    <swiper-item class="swiper" item-id="1">
+        <view class="button" catchtap="button" style="{{button ? '':'background-color: rgb(185, 185, 185);'}}">
+            <mp-icon style="position: relative;top: -4rpx;left: -10rpx;" icon="{{button ? 'done':'close'}}" type="field" color="{{button ? '#fff':'black'}}" size="{{30}}"></mp-icon>
+            <text style="{{button ? '':'color:black;'}}">{{button ? '已开启':'已关闭'}}</text>
+        </view>
+        <view class="title" style="height: {{MenuHeight}}px; line-height: {{MenuHeight}}px; width: {{MenuLeft}}px;position: absolute;top: {{MenuTop}}px;text-align: center;">是否开启首屏小视频?</view>
+    </swiper-item>
+    <swiper-item class="swiper" item-id="2"></swiper-item>
+</swiper>

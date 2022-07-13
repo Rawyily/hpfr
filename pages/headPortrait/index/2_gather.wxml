@@ -1,0 +1,34 @@
+<block wx:if="{{gather.length > 0}}">
+    <view class="scrollbox">
+        <!-- 加载一次的数据 -->
+        <scroll-view scroll-top="{{gather_scrollTop}}" enhanced="true" show-scrollbar="{{false}}" scroll-y="true" bindscrolltolower="HGappheadportraitgather" class="scrollview">
+            <view wx:for="{{gather}}" wx:key="index">
+                <!-- 广告 -->
+                <view style="height: 200rpx;width: 720rpx;overflow: hidden;" wx:if="{{gather_advertising_img[index].imgurl}}">
+                    <image  catchtap="previewImage" data-url="{{all_advertising_img[index].imgurl}}" style="height: 200rpx;width: 720rpx;" mode="scaleToFill" src="{{gather_advertising_img[index].imgurl}}"></image>
+                </view>
+                <!-- 列表 -->
+                <view wx:for="{{item.array}}" wx:key="index" class="gather" catchtap="go_gather" data-data="{{item}}">
+                    <view class="cover">
+                        <image src="{{item.cover}}"></image>
+                    </view>
+                    <view class="title">{{item.name}}</view>
+                    <view class="arrowicon">
+                        <mp-icon style="position: relative;top: -5rpx;" icon="arrow" color="#000" size="{{windowWidth/750*45}}"></mp-icon>
+                    </view>
+                    <view class="introduce"><text space="emsp" decode="{{true}}">&emsp;&emsp;</text>{{item.introduce}}</view>
+                    <view class="time">上次更新时间：{{item._updateTime}}</view>
+                </view>
+            </view>
+            <!-- mp-loading加载提示 -->
+            <view style="width: 750rpx; height: 100rpx;float: left;" wx:if="{{gather_loading}}">
+                <mp-loading style="position: relative;top: 40rpx;"></mp-loading>
+            </view>
+            <!-- 全部加载完成提示 -->
+            <view class="loaded" wx:if="{{gather_End}}">-END-</view>
+        </scroll-view>
+    </view>
+</block>
+<block wx:else>
+    <mp-loading class="mp-loading" />
+</block>

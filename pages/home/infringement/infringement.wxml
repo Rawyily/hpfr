@@ -1,0 +1,23 @@
+<!--pages/home/infringement/infringement.wxml-->
+<view style="width:750vw;height: 100vh;display: flex;flex-direction: column;">
+    <view style="height: {{MenuTop}}px;width: 750rpx;" catchtap="ScrollTop"></view>
+    <view style="width: {{MenuLeft}}px;height: {{MenuHeight}}px;line-height: {{MenuHeight}}px;text-align: center;font-weight: bold;">{{title}}</view>
+    <view class="tab">
+        <view class="itemtab" id="{{tap==0 ? 'active':''}}" bindtap="TapChangeItemID" data-itemID="0">全部反馈</view>
+        <view class="itemtab" id="{{tap==1 ? 'active':''}}" bindtap="TapChangeItemID" data-itemID="1">我的反馈</view>
+    </view>
+    <view style="flex: 1;">
+        <swiper style="width:730rpx;height:100%;padding-left: 10rpx;padding-right: 10rpx;" current="{{item_id}}" bindchange="swiperChange">
+            <swiper-item style="width:inherit;height: inherit;" item-id="0"></swiper-item>
+            <swiper-item style="width:inherit;height: inherit;" item-id="1">
+                <include src="0_allInfringement.wxml"></include>
+            </swiper-item>
+            <swiper-item style="width:inherit;height: inherit;" item-id="2">
+                <include src="1_myInfringement.wxml"></include>
+            </swiper-item>
+            <swiper-item hidden="{{!addNew}}" style="width:inherit;height: inherit;" item-id="3">
+                <include src="2_newInfringement.wxml"></include>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>

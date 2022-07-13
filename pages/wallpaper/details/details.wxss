@@ -1,0 +1,266 @@
+/* pages/wallpaper/details/details.wxss */
+
+.swiper {
+    width: 750rpx;
+    height: 100vh;
+}
+
+.swiper swiper-item:nth-child(2) {
+    display: flex;
+    align-items: center;
+    /* background-color: #4D4D4D; */
+    /* background-color: rgb(253, 255, 226); */
+}
+
+.swiper swiper-item image {
+    width: 750rpx;
+    /* border-top: 5px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 5px solid rgba(0, 0, 0, 0.1); */
+}
+.name {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    font-family:cursive;
+    font-size: 1.5rem;
+}
+
+.createTime {
+    width: 750rpx;
+    height: 60rpx;
+    position: absolute;
+    bottom: 30rpx;
+    font-size: 20rpx;
+    line-height: 20rpx;
+    text-align: center;
+}
+
+.copyright {
+    width: 750rpx;
+    height: 30rpx;
+    position: absolute;
+    bottom: 30rpx;
+    font-size: 20rpx;
+    line-height: 20rpx;
+    text-align: center;
+}
+
+._id {
+    width: 750rpx;
+    height: 30rpx;
+    position: absolute;
+    bottom: 0;
+    font-size: 20rpx;
+    line-height: 20rpx;
+    text-align: center;
+}
+
+.right_icon {
+    width: 150rpx;
+    /* height: 600rpx; */
+    position: absolute;
+    bottom: 200rpx;
+    right: 0;
+    /* background-color: rgb(255, 161, 161); */
+}
+
+.eyes_on_icon {
+    width: 150rpx;
+    height: 120rpx;
+    /* background-color: rgb(255, 193, 193); */
+}
+
+.mp_icon_eyes_on {
+    /* background-color: blue; */
+    margin-left: 36rpx;
+}
+
+.eyes_on_num {
+    width: 150rpx;
+    position: absolute;
+    top: 70rpx;
+    text-align: center;
+    font-size: 35rpx;
+    font-weight: bold;
+}
+
+.like_icon {
+    width: 150rpx;
+    height: 150rpx;
+    position: relative;
+    /* background-color: rgb(0, 255, 34); */
+}
+
+.mp_icon_like {
+    /* background-color: blue; */
+    margin-left: 25rpx;
+}
+
+.like_num {
+    width: 150rpx;
+    position: absolute;
+    top: 90rpx;
+    text-align: center;
+    font-size: 35rpx;
+    font-weight: bold;
+}
+
+.star_icon {
+    width: 150rpx;
+    height: 150rpx;
+    position: relative;
+    /* background-color: rgb(0, 255, 34); */
+}
+
+.mp_icon_star {
+    /* background-color: blue; */
+    margin-left: 25rpx;
+}
+
+.star_num {
+    width: 150rpx;
+    position: absolute;
+    top: 90rpx;
+    text-align: center;
+    font-size: 35rpx;
+    font-weight: bold;
+}
+
+.download_icon {
+    width: 150rpx;
+    height: 150rpx;
+    position: relative;
+    /* background-color: rgb(0, 255, 34); */
+}
+
+.mp_icon_download {
+    /* background-color: blue; */
+    margin-left: 26rpx;
+}
+
+.download_num {
+    width: 150rpx;
+    position: absolute;
+    top: 90rpx;
+    text-align: center;
+    font-size: 35rpx;
+    font-weight: bold;
+}
+
+.upbackgroundimage_icon {
+    width: 150rpx;
+    height: 150rpx;
+    position: relative;
+}
+
+.upbackgroundimage_icon .icon_setbackgroundimage_box {
+    height: 80rpx;
+    width: 60%;
+    margin-left: 20%;
+    /* background-color: lawngreen; */
+}
+
+.upbackgroundimage_icon image {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.upbackgroundimage_icon .upbackgroundimage_num {
+    width: 150rpx;
+    position: absolute;
+    top: 70rpx;
+    right: 0;
+    text-align: center;
+    font-size: 35rpx;
+    font-weight: bold;
+}
+
+.right_icon view mp-icon:active {
+    margin-left: 32rpx;
+}
+
+/* iphone */
+.iphone {
+    width: 450rpx;
+    height: 500rpx;
+    /* background-color: rgb(255, 255, 255); */
+    position: absolute;
+    left: 160rpx;
+    display: flex;
+    align-items: center;
+}
+
+.iphone image:nth-child(1) {
+    width: 450rpx;
+    position: absolute;
+    z-index: 1;
+}
+
+.iphone image:nth-child(2) {
+    width: 430rpx;
+    margin-left: 10rpx;
+    position: absolute;
+}
+
+.keywords {
+    width: 160rpx;
+    position: absolute;
+    left: 0;
+    /* background-color: #fff; */
+}
+
+.keywords .keyword {
+    float: right;
+    width: 44rpx;
+    margin: 2rpx;
+    margin-bottom: 10rpx;
+    border: 1px solid rgb(255, 137, 137);
+    font-size: 30rpx;
+    color: #ff4800;
+    writing-mode: tb-rl;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 25rpx;
+    padding-bottom: 25rpx;
+    border-radius: 15px;
+}
+#av{
+    border: 1px solid rgb(39, 39, 39);
+    color: #2e2e2e;
+}
+.keywords .keyword:active {
+    border: 1px solid rgb(0, 4, 255);
+    color: #7b00ac;
+}
+
+.collectionOk {
+    width: 700rpx;
+    height: 70rpx;
+    margin-left: 25rpx;
+    margin-right: 25rpx;
+    background-color: #fff;
+    position: absolute;
+    bottom: 16rpx;
+    border-radius: 10rpx;
+    line-height: 70rpx;
+    animation: collectOkinit 500ms;
+    z-index: 1;
+}
+
+@keyframes collectOkinit {
+    from {
+        left: 750rpx;
+    }
+
+    to {
+        left: 0rpx;
+    }
+}
+
+.collectionOk text {
+    font-size: 25rpx;
+    font-weight: bolder;
+}

@@ -1,0 +1,218 @@
+/* 搜索 */
+.van-search {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.van_search_custom_class {
+    width: 100%;
+    height: 100%;
+    border-radius: 50rpx;
+}
+
+.van_search_input_class {
+    font-size: 30rpx;
+}
+
+/* 顶部导航栏 */
+.tab {
+    display: flex;
+    height: 70rpx;
+}
+
+.tab view {
+    flex: 1;
+    height: 50;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+    line-height: 50rpx;
+    text-align: center;
+}
+
+#active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* include */
+.content {
+    width: 750rpx;
+    height:100%;
+
+}
+
+.content swiper {
+    height: inherit;
+}
+
+/* include公用css */
+.mp-loading {
+    width: 250rpx;
+    position: absolute;
+    top: 50%;
+    left: 250rpx;
+}
+
+.scrollbox {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    margin-left: 15rpx;
+    margin-right: 15rpx;
+    display: flex;
+    height: 100%;
+}
+
+.scrollview {
+    position: relative;
+    height: 100%;
+}
+
+.imgbox {
+    float: left;
+    width: 220rpx;
+    height: 220rpx;
+    margin: 10rpx;
+}
+
+.imgbox .img {
+    width: 220rpx;
+    height: 220rpx;
+    border-radius: 10rpx;
+
+}
+
+.loaded {
+    width: 750rpx;
+    height: 120rpx;
+    /* background-color: #fff; */
+    line-height: 120rpx;
+    text-align: center;
+    float: left;
+    color: #ffaaaa;
+}
+
+/* 分类.wxml */
+.classifyscroll {
+    position: relative;
+    height: 100%;
+    /* background-color: rgb(255, 178, 178); */
+    padding-left: 25rpx;
+    padding-right: 25rpx;
+    width: 750rpx;
+}
+
+.classify {
+    width: 300rpx;
+    height: 218rpx;
+    margin: 25rpx;
+    float: left;
+    position: relative;
+    background-color: rgba(200, 244, 255, 0.199);
+    border-radius: 2px;
+}
+
+.classify .classify_imgbox {
+    width: 300rpx;
+    height: 168rpx;
+    /* background-color: aqua; */
+    position: absolute;
+    top: 0;
+}
+
+.classify .classify_imgbox image {
+    width: 300rpx;
+    height: 168rpx;
+}
+
+.classify .classify_name {
+    width: 300rpx;
+    height: 50rpx;
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(245, 245, 245);
+    font-weight: bold;
+    font-size: 35rpx;
+    text-align: center;
+    line-height: 50rpx;
+    font-family: cursive;
+}
+/* gather 集合 */
+.gather{
+    width: 720rpx;
+    height: 220rpx;
+    margin-top: 15rpx;
+    margin-bottom: 15rpx;
+    background-color:rgb(255, 250, 245);
+    position: relative;
+    border-radius: 5px;
+}
+.gather:active{
+    background-color:rgb(245, 255, 253);
+}
+.gather .cover{
+    width: 200rpx;
+    height: 200rpx;
+    position: absolute;
+    top: 10rpx;
+    left: 10rpx;
+    background-color: rgb(255, 235, 235);
+}
+.gather .cover image{
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 10rpx;
+}
+.gather .title{
+    width: 420rpx;
+    height: 89rpx;
+    position: absolute;
+    left: 250rpx;
+    top: 0;
+    line-height: 90rpx;
+    font-weight: bold;
+    border-bottom: 1rpx solid rgb(255, 214, 214);
+}
+.gather .arrowicon {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.gather .introduce{
+    width: 490rpx;
+    height: 100rpx;
+    position: absolute;
+    bottom: 25rpx;
+    right: 10rpx;
+    font-size: 22rpx;
+    text-overflow: ellipsis;
+    color: rgb(29, 29, 29);
+    font-family:cursive;
+    font-weight: bold;
+    letter-spacing:-2 rpx;
+    line-height: 25rpx;
+}
+.gather .time {
+    width: 400rpx;
+    height: 25rpx;
+    position: absolute;
+    right: 10rpx;
+    bottom: 0;
+    text-align: right;
+    font-size: 20rpx;
+    font-weight: bold;
+    line-height: 25rpx;
+    color: tomato;
+}
+.keywords{
+    float: left;
+    padding-left: 15rpx;
+    padding-right: 15rpx;
+    border: 1rpx solid rgb(158, 0, 66);
+    color: rgb(158, 0, 66);
+    margin: 20rpx;
+}
+.keywords:active{
+    border: 1rpx solid rgb(255, 0, 106);
+    color: rgb(255, 0, 106);
+}

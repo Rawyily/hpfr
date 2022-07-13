@@ -1,0 +1,39 @@
+/* pages/home/compressed_image/compressed_image.wxss */
+
+
+.box {
+    height: 100%;
+    width: 750rpx;
+    display: flex;
+    /* background-color: #fff; */
+    flex-direction: column;
+}
+
+.vanslider {
+    height: 50rpx;
+    margin-top: 50rpx;
+    width: 600rpx;
+    margin-left: 75rpx;
+
+}
+
+.custom-button {
+    width: 80rpx;
+    background-color: rgb(255, 0, 0);
+    color: lavenderblush;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.button {
+    width: 750rpx;
+    height: 100rpx;
+    margin-bottom: 100rpx;
+}
+
+.button .buttons {
+    width: 200rpx;
+    float: left;
+    margin-left: 25rpx;
+    margin-right: 25rpx;
+}

@@ -1,0 +1,102 @@
+/* pages/user/collectionSum_wallpaper/collectionSum_wallpaper.wxss */
+/* 状态栏 */
+.starusBar {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    background-color: rgba(255, 248, 220, 0);
+    width: 750rpx;
+}
+
+.title {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 3rpx;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 48rpx;
+    font-weight: bold;
+    color: rgb(255, 170, 170);
+}
+
+.content {
+    width: 750rpx;
+    /* background-color: #fff; */
+}
+
+.content .swiper {
+    height: inherit;
+    width: inherit;
+}
+
+.content .swiper swiper-item {
+    height: inherit;
+    width: inherit;
+    /* background-color: rgb(255, 97, 97); */
+}
+
+/* include */
+.mp-loading {
+    width: 250rpx;
+    position: absolute;
+    top: 50%;
+    left: 250rpx;
+}
+
+.scrollbox {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    margin-left: 15rpx;
+    margin-right: 15rpx;
+    display: flex;
+    height: 100%;
+}
+
+.scrollview {
+    position: relative;
+    height: 100%;
+}
+
+.end {
+    width: 750rpx;
+    height: 120rpx;
+    /* background-color: #fff; */
+    line-height: 120rpx;
+    text-align: center;
+    float: left;
+    color: #ffaaaa;
+}
+
+/* across.wxml */
+.across_imgbox {
+    float: left;
+    width: 340rpx;
+    /* height: 390rpx; */
+    margin: 10rpx;
+    /* background-color: #fff; */
+    /* border-radius: 3%; */
+}
+
+.across_imgbox image {
+    width: 340rpx;
+    /* height: 390rpx; */
+    border-radius: 3%;
+}
+
+/* vertical.wxml */
+.vertical_imgbox {
+    float: left;
+    width: 220rpx;
+    /* height: 390rpx; */
+    margin: 10rpx;
+    /* background-color: #fff; */
+    /* border-radius: 3%; */
+}
+
+.vertical_imgbox image {
+    width: 220rpx;
+    /* height: 390rpx; */
+    border-radius: 3%;
+}

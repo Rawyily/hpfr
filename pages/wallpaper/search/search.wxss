@@ -1,0 +1,92 @@
+/* pages/headPortrait/search/search.wxss */
+page {
+    background:linear-gradient(30deg,rgb(169, 255, 251),rgb(255, 196, 196));
+}
+/* 轮播图 */
+.swiper {
+    width: 100vw;
+    height: 100vh;
+}
+/* 标题 */
+.title {
+    width: 750rpx;
+    /* background: rgb(255, 255, 255); */
+    position: relative;
+}
+
+.title .titletext {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/* 页面加载中 */
+.mp-loading {
+    width: 250rpx;
+    position: absolute;
+    top: 50%;
+    left: 250rpx;
+}
+/* 滑动区域 */
+.scrollview {
+    width: 720rpx;
+    padding-left: 15rpx;
+    padding-right: 15rpx;
+    /* background-color: rgb(255, 0, 0); */
+}
+.scrollview .scrollview_view {
+    width: 100%;
+    /* background-color: rgb(255, 155, 155); */
+}
+/* 广告 */
+.advertising{
+    width: 720rpx;
+    height: 200rpx;
+    float: left;
+}
+.advertising image{
+    width: 720rpx;
+    height: 200rpx;
+}
+/* 加载数据 */
+.loaded {
+    width: 750rpx;
+    height: 120rpx;
+    /* background-color: #fff; */
+    line-height: 120rpx;
+    text-align: center;
+    float: left;
+    color: #ffaaaa;
+}
+/* 横屏壁纸 */
+.across_imgbox {
+    float: left;
+    width: 340rpx;
+    /* height: 390rpx; */
+    margin: 10rpx;
+    /* background-color: #fff; */
+    /* border-radius: 3%; */
+}
+
+.across_imgbox image {
+    width: 340rpx;
+    /* height: 390rpx; */
+    border-radius: 3%;
+}
+.vertical_imgbox {
+    float: left;
+    width: 220rpx;
+    /* height: 390rpx; */
+    margin: 10rpx;
+    /* background-color: #fff; */
+    /* border-radius: 3%; */
+}
+
+.vertical_imgbox image {
+    width: 220rpx;
+    /* height: 390rpx; */
+    border-radius: 3%;
+}

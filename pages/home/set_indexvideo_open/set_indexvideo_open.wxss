@@ -1,0 +1,30 @@
+/* pages/home/set_indexvideo_open/set_indexvideo_open.wxss */
+page {
+    background: #fffae3;
+}
+
+.swiper {
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.button {
+    width: 300rpx;
+    height: 80rpx;
+    background-color: #fff;
+    position: absolute;
+    top: 50vh;
+    left: 225rpx;
+    line-height: 80rpx;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2px;
+    background-color: rgba(28, 177, 92, 1);
+    color: rgb(255, 255, 255);
+    font-size: 40rpx;
+}
+
+.button:active {
+    opacity: 0.2;
+}

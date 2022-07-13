@@ -1,0 +1,5 @@
+<swiper current="{{item_id}}" bindchange="swiperchange" class="swiper">
+    <swiper-item item-id="0">
+        <include src="0_user.wxml"></include>
+    </swiper-item>
+</swiper>

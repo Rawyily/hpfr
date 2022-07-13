@@ -1,0 +1,195 @@
+/* index.wxml */
+.swiper {
+    width: 750px;
+    height: 100vh;
+}
+
+/* 0_user.wxml */
+.scrollview {
+    height: 100vh;
+}
+
+/* 背景图 */
+.userBackground {
+    background-color: rgba(28, 177, 92, 1);
+    width: 750rpx;
+    height: 422rpx;
+}
+
+.userBackground image {
+    width: 750rpx !important;
+    height: 422rpx !important;
+}
+
+/* 用户信息 */
+.userdatabox {
+    background-color: #fff;
+    width: 650rpx;
+    height: 300rpx;
+    border-radius: 50rpx 50rpx 0rpx 0rpx;
+    margin-top: -50rpx;
+    padding-left: 50rpx;
+    padding-right: 50rpx;
+    position: relative;
+}
+
+/* 头像 */
+.userdatabox .hphpf {
+    width: 160rpx;
+    height: 160rpx;
+    /* margin-left: 30rpx; */
+    position: relative;
+    top: -80rpx;
+    /* background-color: rgb(255, 202, 202); */
+}
+
+.hphpf .hp {
+    width: 160rpx;
+    height: 160rpx;
+    position: absolute;
+    top: 0rpx;
+    left: 0rpx;
+    background-color: #ffd100;
+}
+.hphpf .hp image{
+    width: inherit;
+    height: inherit;
+}
+#hp_circular {
+    border-radius: 50%;
+}
+
+.hphpf .hpf {
+    position: absolute;
+    top: 0rpx;
+    left: 0rpx;
+    width: 160rpx;
+    height: 160rpx;
+}
+
+/* 昵称 */
+.username {
+    /* background-color: rgb(255, 213, 213); */
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 40rpx;
+    font-weight: bolder;
+    margin-top: -80rpx;
+}
+/* 邀请码 */
+.useropenid{
+    font-size: 20rpx;
+    color: rgb(255, 200, 200);
+}
+.useropenid .useropenidnum{
+    color: rgb(255, 160, 160);
+}
+/* 分割线 */
+.hr_divider{
+    height: 1rpx;
+    background-color: rgb(240, 229, 229);
+}
+/* 收藏：头像收藏 头像框收藏 壁纸 */
+.collectbox{
+    width: 480rpx;
+    height: 100rpx;
+    position: absolute;
+    right: 30rpx;
+    top: 10rpx;
+}
+/* 列表方块 */
+.collectbox .collectlist{
+    width: 140rpx;
+    height: 100rpx;
+    float: left;
+    /* background-color: rgb(255, 66, 66); */
+}
+/* 收藏的分类 */
+.collectbox .collectTitle{
+    text-align: center;
+    font-size: x-small;
+    color: rgb(150, 150, 150);
+}
+.collectbox .collectNum{
+    text-align: center;
+    font-size: small;
+    color: rgb(24, 24, 24);
+    font-weight:bolder;
+}
+/* 分割线 */
+.collectbox .divider{
+    width: 1rpx;
+    height: 50rpx;
+    border-right: 1px solid rgba(223, 223, 223, 0.5);
+    margin-top: 25rpx;
+    float: left;
+}
+/* 红色的收藏标题 */
+.collectbox .collectTextTitle{
+    height: 80rpx;
+    margin-top: -9rpx;
+    float: left;
+    border: 1px solid rgb(255, 188, 188);
+    writing-mode: tb-rl;
+    font-size: x-small;
+    text-align: center;
+    color: #ffd100;
+}
+/* 用户选择功能的列表 */
+.UserSelectBox{
+    width: 650rpx;
+    /* height: 1000rpx; */
+    border-left: 50rpx solid rgba(255, 255, 255, 0);
+    border-right: 50rpx solid rgba(255, 255, 255, 0);
+    position: relative;
+    top: -80rpx;
+}
+.UserSelectList{
+    width: 650rpx;
+    height: 80rpx;
+    position: relative;
+    line-height: 80rpx;
+    border-bottom: 1px solid rgb(235, 235, 235);
+    overflow: hidden;
+    background-image: linear-gradient(90deg, #FFC0CB, 	#FFD700);
+    border-radius: 10rpx;
+    display: flex;
+    margin-bottom: 10rpx;
+}
+/* 左边的图标 */
+.UserSelectlistIcon{
+    width: 80rpx;
+    /* height: 80rpx; */
+    position: relative;
+    border-radius: 40rpx;
+    margin-left: 20rpx;
+    /* background-color: rgb(255, 255, 255); */
+}
+.UserSelectlistIcon .UserSelectlistIconimg{
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    top: 15rpx;
+    left: 15rpx;
+    border-radius: 25rpx;
+}
+/* 选项标题 */
+.UserSelectListtext{
+    width: 400rpx;
+    height: 80rpx;
+    overflow: hidden;
+    font-size: 28rpx;
+    font-weight: bolder;
+}
+/* 箭头 */
+.UserSelectListIconarrow{
+    width: 80rpx;
+    height: 80rpx;
+    margin-left: 70rpx;
+    position: relative;
+    top: -5rpx;
+}
+.iconArrow{
+    position: relative;
+    left: 20rpx;
+}

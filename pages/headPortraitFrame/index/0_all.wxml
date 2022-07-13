@@ -1,0 +1,26 @@
+<block wx:if="{{allHPF.length > 0}}">
+    <view class="scrollbox">
+        <!-- 加载一次的数据 -->
+        <scroll-view scroll-top="{{all_scrollTop}}" enhanced="true" show-scrollbar="{{false}}" scroll-y="true" bindscrolltolower="HGappheadportraitframe" class="scrollview">
+            <view wx:for="{{allHPF}}" wx:key="index">
+                <!-- 广告 -->
+                <view style="height: 200rpx;width: 750rpx;float: left;overflow: hidden;" wx:if="{{all_advertising_img[index].imgurl}}">
+                    <image catchtap="previewImage" data-url="{{all_advertising_img[index].imgurl}}" style="height: 200rpx;width: 750rpx;position: relative;" mode="scaleToFill" src="{{all_advertising_img[index].imgurl}}"></image>
+                </view>
+                <!-- 头像框 -->
+                <view wx:for="{{item.array}}" wx:key="index" class="imgbox">
+                    <image class="img" src="{{item.thumbnail}}" catchtap="goDetails" data-data="{{item}}"></image>
+                </view>
+            </view>
+            <!-- mp-loading加载提示 -->
+            <view style="width: 750rpx; height: 100rpx;float: left;" wx:if="{{allloading}}">
+                <mp-loading style="position: relative;top: 40rpx;"></mp-loading>
+            </view>
+            <!-- 全部加载完成提示 -->
+            <view class="loaded" wx:if="{{allEnd}}">-END-</view>
+        </scroll-view>
+    </view>
+</block>
+<block wx:else>
+    <mp-loading class="mp-loading" />
+</block>

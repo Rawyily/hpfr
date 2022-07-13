@@ -1,0 +1,34 @@
+<view style="width: 750rpx;height: 100vh;display:flex;flex-direction:column;">
+    <view bindtap="scrollTop" style="width: 750rpx;height: {{statusBarHeight}}px;"></view>
+    <view style="width: {{MenuLeft-(windowWidth - MenuRight)*2}}px;height: {{MenuBottom - statusBarHeight}}px;left: {{windowWidth - MenuRight}}px;">
+        <van-search bind:search="bindselectresult" custom-class="van_search_custom_class" input-class="van_search_input_class" background="none" field-class="van_search_field_class" shape="round" value="{{ value }}" input-align="left" placeholder="搜索" />
+    </view>
+    <view class="tab">
+        <view class="item-tab" id="{{tap==0 ? 'active':''}}" bindtap="changeItemID" data-itemID="0">全部</view>
+        <view class="item-tab" id="{{tap==1 ? 'active':''}}" bindtap="changeItemID" data-itemID="1">分类</view>
+        <view class="item-tab" id="{{tap==2 ? 'active':''}}" bindtap="changeItemID" data-itemID="2">集合</view>
+        <view class="item-tab" id="{{tap==3 ? 'active':''}}" bindtap="changeItemID" data-itemID="3">关键词</view>
+        <view class="item-tab" id="{{tap==4 ? 'active':''}}" bindtap="changeItemID" data-itemID="4">表情包</view>
+    </view>
+    <view style="flex: 1;">
+        <view class="content">
+            <swiper current="{{item_id}}" bindchange="changeTap">
+                <swiper-item item-id="0">
+                    <include src="0_all.wxml"></include>
+                </swiper-item>
+                <swiper-item item-id="1">
+                    <include src="1_classify.wxml"></include>
+                </swiper-item>
+                <swiper-item item-id="2">
+                    <include src="2_gather.wxml"></include>
+                </swiper-item>
+                <swiper-item item-id="3">
+                    <include src="3_keywords.wxml"></include>
+                </swiper-item>
+                <swiper-item item-id="4">
+                    <include src="4_meme.wxml"></include>
+                </swiper-item>
+            </swiper>
+        </view>
+    </view>
+</view>

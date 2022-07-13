@@ -1,0 +1,53 @@
+<scroll-view scroll-top="50" enhanced="true" show-scrollbar="{{false}}" scroll-y="true" class="scrollview">
+    <view class="userBackground">
+        <image mode="{{mode}}" catchtap="previewImage" src="{{userBackground}}"></image>
+    </view>
+    <view class="userdatabox">
+        <!-- 头像 -->
+        <view class="hphpf" catchtap="set_hp_style">
+            <view class="hp" id="{{hp_circular ? '':'hp_circular'}}" style="{{hp_style}}">
+                <image src="{{hp_src}}" id="{{hp_circular ? '':'hp_circular'}}"></image>
+            </view>
+            <view class="hpf">
+                <image src="{{hpf_src}}" class="hpf"></image>
+            </view>
+        </view>
+        <!-- 昵称 -->
+        <view class="username" catchtap="getUserProfile">{{name}}</view>
+        <!-- 邀请码ID -->
+        <view class="useropenid">邀请码: <text class="useropenidnum" user-select="true">{{openid}}</text> (长按复制)</view>
+        <!-- 分割线 -->
+        <view class="hr_divider"></view>
+        <!-- 收藏 -->
+        <view class="collectbox">
+            <!-- 头像收藏 头像框收藏 壁纸 -->
+            <view class="collectlist" catchtap="toMyHpCollection">
+                <view class="collectTitle">头像</view>
+                <view class="collectNum">{{headportraitnum}} </view>
+            </view>
+            <view class="divider"></view><!-- 分割线 divider -->
+            <view class="collectlist" catchtap="toMyHpfCollection">
+                <view class="collectTitle">头像框</view>
+                <view class="collectNum">{{headportraitframenum}}</view>
+            </view>
+            <view class="divider"></view><!-- 分割线 divider -->
+            <view class="collectlist" catchtap="toMyWallpaperCollection">
+                <view class="collectTitle">壁纸</view>
+                <view class="collectNum">{{wallpapernum}}</view>
+            </view>
+            <view class="collectTextTitle">收藏</view>
+        </view>
+    </view>
+    <!-- 用户选择列表 -->
+    <view class="UserSelectBox">
+        <view class="UserSelectList" wx:for="{{selectlist}}" wx:key="index" catchtap="ToSelectListLink" data-i="{{item}}">
+            <view class="UserSelectlistIcon">
+                <image class="UserSelectlistIconimg" src="{{icon[index]}}"></image>
+            </view>
+            <view class="UserSelectListtext">{{item.title}}</view>
+            <view class="UserSelectListIconarrow">
+                <mp-icon class="iconArrow" icon="arrow" color="#FFFFFF" size="{{18}}"></mp-icon>
+            </view>
+        </view>
+    </view>
+</scroll-view>

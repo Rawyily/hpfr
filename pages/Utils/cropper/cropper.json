@@ -1,0 +1,8 @@
+{
+    "disableScroll": true,
+    "enablePullDownRefresh" :false,
+    "usingComponents": {
+        "image-cropper": "/components/image-cropper/image-cropper",
+        "mp-icon": "weui-miniprogram/icon/icon"
+    }
+}

@@ -1,0 +1,75 @@
+{
+    "pages": [
+        "pages/home/index/index",
+        "pages/headPortrait/index/index",
+        "pages/headPortraitFrame/index/index",
+        "pages/wallpaper/index/index",
+        "pages/user/index/index",
+        "pages/index/index",
+        "pages/Utils/cropper/cropper",
+        "pages/Utils/error/error",
+        "pages/home/createHeadPortrait/createHeadPortrait",
+        "pages/home/set_indexvideo_open/set_indexvideo_open",
+        "pages/headPortrait/classify/classify",
+        "pages/headPortrait/details/details",
+        "pages/headPortraitFrame/details/details",
+        "pages/headPortraitFrame/search/search",
+        "pages/user/setNewNicknameOrHeadportrait/setNewNicknameOrHeadportrait",
+        "pages/user/collectionSum_hpf/collectionSum_hpf",
+        "pages/user/collectionSum_hp/collectionSum_hp",
+        "pages/headPortrait/search/search",
+        "pages/headPortrait/gather/gather",
+        "pages/headPortrait/keywords/keywords",
+        "pages/wallpaper/search/search",
+        "pages/wallpaper/details/details",
+        "pages/user/collectionSum_wallpaper/collectionSum_wallpaper",
+        "pages/user/upbackground/upbackground",
+        "pages/user/loginRecord/loginRecord",
+        "pages/home/compressed_image/compressed_image",
+        "pages/home/infringement/infringement",
+        "pages/home/infringement_detail/infringement_detail"
+    ],
+    "window": {
+        "navigationBarTextStyle": "black",
+        "navigationStyle": "custom",
+        "enablePullDownRefresh": false
+    },
+    "sitemapLocation": "sitemap.json",
+    "useExtendedLib": {
+        "weui": true
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/home/index/index",
+                "text": "首页",
+                "iconPath": "images/tabBarIcon/home.png",
+                "selectedIconPath": "images/tabBarIcon/home.png"
+            },
+            {
+                "pagePath": "pages/headPortrait/index/index",
+                "text": "头像",
+                "iconPath": "images/tabBarIcon/HeadPortrait.png",
+                "selectedIconPath": "images/tabBarIcon/HeadPortrait.png"
+            },
+            {
+                "pagePath": "pages/headPortraitFrame/index/index",
+                "text": "头像框",
+                "iconPath": "images/tabBarIcon/HeadPorartirFrame.png",
+                "selectedIconPath": "images/tabBarIcon/HeadPorartirFrame.png"
+            },
+            {
+                "pagePath": "pages/wallpaper/index/index",
+                "text": "壁纸",
+                "iconPath": "images/tabBarIcon/wallpaper.png",
+                "selectedIconPath": "images/tabBarIcon/wallpaper.png"
+            },
+            {
+                "pagePath": "pages/user/index/index",
+                "text": "我的",
+                "iconPath": "images/tabBarIcon/user.png",
+                "selectedIconPath": "images/tabBarIcon/user.png"
+            }
+        ]
+    }
+}

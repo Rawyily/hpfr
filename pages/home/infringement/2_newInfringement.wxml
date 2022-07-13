@@ -1,0 +1,28 @@
+<scroll-view style="width: 730rpx;height: 100%;padding-left: 5rpx;padding-right: 5rpx;" bindscrolltolower="" scroll-top="{{}}" enhanced="true" show-scrollbar="{{false}}" scroll-y="true">
+    <!-- 1 -->
+    <view class="steps">1.请输入侵权内容下方的编号</view>
+    <van-cell-group>
+        <van-field bind:blur="vanfieldBlur" bind:confirm="vanfieldConfirm" input-class="vanfieldcss" clearable="true" maxlength="35" size="large" model:value="{{ value_id }}" placeholder="请输入侵权内容下方的编号" border="{{ false }}" />
+    </van-cell-group>
+    <view style="margin: auto;" wx:if="{{_id != null}}">
+        <image catchtap="goDetail" style="width: 240rpx;height: 0;margin-left: 240rpx;border-radius: 3px;margin-top: 30rpx;" mode="widthFix" src="{{_id.thumbnail}}"></image>
+    </view>
+    <!-- 2 -->
+    <view class="steps"><text decode="true">2.请添加相关图片(1~9P,自动压缩后&lt;1M)</text></view>
+    <view class="second_imgbox" style="{{index == 3 ? 'clear:left;':''}}{{index == 6 ? 'clear:left;':''}}" wx:for="{{chooseImg}}" wx:key="index">
+        <image catchtap="previewImage" data-url="{{item.tempFilePath}}" style="width: 220rpx;" mode="widthFix" src="{{item.tempFilePath}}"></image>
+        <view class="delimg">
+            <mp-icon catchtap="del_img" data-index="{{index}}" style="position: relative;top: -5rpx;" icon="close" color="#fff" size="{{windowWidth/750*50}}"></mp-icon>
+        </view>
+    </view> 
+    <!-- 点击添加图片 -->
+    <view style="{{chooseImg.length == 3 ? 'clear:left;':''}}{{chooseImg.length ==  6? 'clear:left;':''}}" wx:if="{{chooseImg.length < 9}}" catchtap="chooseImg" id="choosebutton">
+        <mp-icon icon="add" color="black" size="{{windowWidth/750*52}}" style="position: relative;top: -3rpx;left: 2rpx;"></mp-icon>
+    </view>
+    <!-- 3 -->
+    <view class="steps">3.请填写相关说明或资料(500字以内)</view>
+    <textarea class="textarea500" bindblur="textareablur" confirm-type="done" value="{{textarea}}" name="" id="" cols="30" rows="10" maxlength="500"></textarea>
+    <!-- 按钮 -->
+    <button catchtap="submit" disabled="{{button_disbled}}" loading="{{button_submit}}" type="primary" style="margin: 180rpx;margin-bottom: 0;">{{button_text}}</button>
+    <view style="height: 180rpx;"></view>
+</scroll-view>

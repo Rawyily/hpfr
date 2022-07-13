@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "mp-loading": "weui-miniprogram/loading/loading",
+        "van-search": "@vant/weapp/search/index"
+    }
+}
