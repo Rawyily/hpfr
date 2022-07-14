@@ -20,6 +20,16 @@ Page({
 
         scrollView: [{
                 current: 1,
+                instructions: "使用说明(当前版本0.7.4),本小程序的GitHub开源地址 https://github.com/Rawyily/hpfr/tree/master",
+                title: {
+                    type: "说明",
+                    title: "小程序使用说明",
+                    secondtitle: "介绍了本小程序的功能应该如何使用"
+                },
+                link: "/pages/home/help/help"
+            },
+            {
+                current: 1,
                 instructions: "支持生成1:1正方形的头像,可以先选择app内的头像或者上传头像,再选择app内的头像框,然后将两者添加到生成器内生成一个头像和头像框组合的新头像!注意,新头像和原头像的大小不同,因为添加了头像框在头像周围所以会显得头像小,而且目前圆形头像框不匹配正方形头像。",
                 title: {
                     type: "生成器",
@@ -29,7 +39,7 @@ Page({
                 link: "/pages/home/createHeadPortrait/createHeadPortrait"
             },
             {
-                current: 1 ,
+                current: 1,
                 instructions: "设置页面，app初始化完成后的会播放一段大约10秒的减压小视频，可以决定是否开启，默认关闭。更换手机恢复默认设置。",
                 title: {
                     type: "小视频",
@@ -57,6 +67,16 @@ Page({
                     secondtitle: "对有侵权行为的内容进行处理"
                 },
                 link: "/pages/home/infringement/infringement"
+            },
+            {
+                current: 1,
+                instructions: "声明,本小程序当前版本(0.7.4)为体验版,非商业用途,仅用于学习交流,不收集用户的隐私数据！",
+                title: {
+                    type: "声明",
+                    title: "声明",
+                    secondtitle: "声明,本小程序仅用于学习交流"
+                },
+                link: "/pages/Utils/error/error"
             },
         ],
         swiperarray: []
@@ -107,7 +127,7 @@ Page({
                 console.log()
                 app.globalData.windowHeight = res.windowHeight
                 that.setData({
-                    windowHeight:res.windowHeight
+                    windowHeight: res.windowHeight
                 })
             }
         })
@@ -117,7 +137,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-        
+
     },
     /**
      * 生命周期函数--监听页面隐藏

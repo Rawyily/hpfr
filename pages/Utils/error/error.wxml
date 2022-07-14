@@ -1,2 +1,3 @@
 <!--pages/Utils/error/error.wxml-->
-<view bindtap="gohome">出错了</view>
+<view bindtap="gohome" class="error">出错了！<text class="onclick_back">点击任意位置返回首页</text></view>
+

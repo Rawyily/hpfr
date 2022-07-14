@@ -1,28 +1,39 @@
 <!--pages/home/index/index.wxml-->
-<view class="welcome">
-    欢迎来到<text class="pink">阿库娅<text style="font-size: 80rpx;color:#59C3E2;">Aqua</text></text>!
-</view>
 <!-- 轮播图 -->
-<swiper autoplay="true" circular="true" class="swiperImages">
-    <swiper-item class="swiperImages" wx:for="{{swiperarray}}" wx:key="index">
-        <image class="swiperImages" src="{{item.imgurl}}"></image>
-    </swiper-item>
-</swiper>
-<scroll-view scroll-y="true" class="scrollView">
-    <swiper wx:for="{{scrollView}}" wx:key="index" current="{{item.current}}" bindchange="bindchange" data-idx="{{index}}" data-link="{{item.link}}" class="swiper">
-        <swiper-item item-id="0">
-            <view class="instructions">{{item.instructions}}</view>
-        </swiper-item>
-        <swiper-item item-id="1" class="content">
-            <view>
-                <view class="type">{{item.title.type}}</view>
-                <text class="title">{{item.title.title}}</text>
-                <text class="secondtitle">{{item.title.secondtitle}}</text>
-                <mp-icon catchtap="ArrowToLink" data-link="{{item.link}}" class="arrow" icon="arrow" color="#ff4800" size="{{windowWidth/750*60}}"></mp-icon>
-            </view>
-        </swiper-item>
-        <swiper-item item-id="2">
-            <view class="go">Let us GO !</view>
-        </swiper-item>
-    </swiper>
-</scroll-view> 
+<view style="display: flex;flex-direction:column; width: 750rpx;height: 100vh;background: aqua;">
+    <view style="width: 750rpx;height: 420rpx;background: bisque;">
+        <swiper autoplay="true" circular="true" class="swiperImages">
+            <swiper-item class="swiperImages" wx:for="{{swiperarray}}" wx:key="index">
+                <image mode="scaleToFill" class="swiperImages" src="{{item.imgurl}}"></image>
+            </swiper-item>
+        </swiper>
+        <view class="welcome">
+            欢迎来到<text class="pink">阿库娅<text style="font-size: 80rpx;color:#59C3E2;">Aqua</text></text>!
+        </view>
+    </view>
+    <view style="flex: 1;background: rgb(0, 255, 13);overflow: hidden;">
+        <view style="width: 750rpx;height: 100%;">
+            <scroll-view scroll-y="true" enhanced="{{true}}" show-scrollbar="{{false}}" style="background-color: rgb(183, 229, 255);height: inherit;">
+                <view style="background-color: rgb(183, 229, 255);width: 750rpx;height: 50rpx;"></view>
+                <swiper wx:for="{{scrollView}}" wx:key="index" current="{{item.current}}" bindchange="bindchange" data-idx="{{index}}" data-link="{{item.link}}" class="swiper">
+                    <swiper-item item-id="0">
+                        <view class="instructions">{{item.instructions}}</view>
+                    </swiper-item>
+                    <swiper-item item-id="1" class="content">
+                        <view>
+                            <view class="type">{{item.title.type}}</view>
+                            <text class="title">{{item.title.title}}</text>
+                            <text class="secondtitle">{{item.title.secondtitle}}</text>
+                            <mp-icon catchtap="ArrowToLink" data-link="{{item.link}}" class="arrow" icon="arrow" color="#ff4800" size="{{windowWidth/750*60}}"></mp-icon>
+                        </view>
+                    </swiper-item>
+                    <swiper-item item-id="2">
+                        <!-- <view class="go">Let us GO !</view> -->
+                        <view class="go">准备出发 !</view>
+                    </swiper-item>
+                </swiper>
+                <view style="background-color: rgb(183, 229, 255);width: 750rpx;height:1rpx;"></view>
+            </scroll-view>
+        </view>
+    </view>
+</view>

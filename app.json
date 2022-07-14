@@ -27,7 +27,8 @@
         "pages/user/loginRecord/loginRecord",
         "pages/home/compressed_image/compressed_image",
         "pages/home/infringement/infringement",
-        "pages/home/infringement_detail/infringement_detail"
+        "pages/home/infringement_detail/infringement_detail",
+        "pages/home/help/help"
     ],
     "window": {
         "navigationBarTextStyle": "black",

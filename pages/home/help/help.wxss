@@ -1,0 +1,15 @@
+/* pages/home/help/help.wxss */
+page{
+    background:#fff;
+}
+.swiper{
+    width: 750rpx;
+    height: 100vh;
+    /* background: blanchedalmond; */
+}
+.swiper .item0{
+    /* background-color: blue; */
+}
+.swiper .item1{
+    background-color: #fff;
+}

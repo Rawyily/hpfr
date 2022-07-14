@@ -1,0 +1,4 @@
+<swiper class="swiper" current="1" bindchange="banck">
+    <swiper-item class="item0" item-id="0"></swiper-item>
+    <swiper-item class="item1" item-id="1"></swiper-item>
+</swiper>

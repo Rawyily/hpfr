@@ -1,1 +1,21 @@
 /* pages/Utils/error/error.wxss */
+page {
+    background: rgb(255, 230, 234);
+}
+
+.error {
+    width: 750rpx;
+    height: 100vh;
+    line-height: 100vh;
+    text-align: center;
+    font-weight: bold;
+    font-size: xx-large;
+    color: rgb(255, 109, 133);
+}
+
+.onclick_back {
+    font-size: 20rpx;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: normal;
+    color: black;
+}

@@ -1,12 +1,9 @@
 /* pages/home/index/index.wxss */
-page{
-    background:#ffffff;
+page {
+    background: #ffffff;
+    height: 100vh;
 }
-.swiperImages {
-    width: 750rpx;
-    height: 420rpx;
-}
-
+/* 欢迎词 */
 .welcome {
     position: absolute;
     top: 0;
@@ -60,12 +57,11 @@ page{
 
     }
 }
-
-.scrollView {
-    background-color: rgb(183, 229, 255);
-    padding-top: 50rpx;
+/* 轮播图 */
+.swiperImages {
+    width: 750rpx;height: 420rpx;
 }
-
+/* 选项列表 */
 .swiper {
     width: 650rpx;
     height: 150rpx;
@@ -73,9 +69,11 @@ page{
     margin-left: 50rpx;
     margin-bottom: 50rpx;
 }
-.content{
+
+.content {
     background-color: rgb(245, 245, 245);
 }
+
 /* 说明 */
 .instructions {
     width: 630rpx;
@@ -98,6 +96,7 @@ page{
     background-color: rgb(187, 255, 0);
     border-left: 50rpx solid rgb(187, 255, 0);
 }
+
 .type {
     width: 40rpx;
     height: 100rpx;
@@ -140,5 +139,5 @@ page{
 }
 
 .arrow:active {
-    transform: rotate(36deg);
+    transform: rotateY(-60deg)
 }
